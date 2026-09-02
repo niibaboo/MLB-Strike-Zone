@@ -1,0 +1,35 @@
+name: Update MLB K-Prop Slate
+
+on:
+  schedule:
+    # 15:00 UTC ≈ 11:00 AM ET / 8:00 AM PT — adjust to run before first pitches.
+    # Cron is always UTC; GitHub Actions does not adjust for daylight saving.
+    - cron: '0 15 * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  build-slate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Build today's slate
+        run: python build_slate.py
+
+      - name: Commit and push report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --quiet --cached || git commit -m "Update slate report $(date -u +%Y-%m-%d)"
+          git push
