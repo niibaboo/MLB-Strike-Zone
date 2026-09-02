@@ -437,24 +437,35 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   .noPitcher{{padding:12px 14px; color:var(--sub); font-size:12px; font-style:italic;}}
   .footnote{{font-size:11px; color:var(--sub); text-align:center; margin-top:20px; line-height:1.6;}}
   .edgeRow{{display:flex; gap:6px; flex-wrap:wrap; align-items:center; border-top:1px dashed var(--border); padding-top:8px;}}
-  .edgeRow input{{width:64px; background:var(--panel2); border:1px solid var(--border); color:var(--text); border-radius:6px; padding:6px; font-size:12px;}}
+  .edgeRow input{{width:76px; background:var(--panel2); border:1px solid var(--border); color:var(--text); border-radius:6px; padding:6px 4px; font-size:12px; -moz-appearance:textfield; appearance:textfield;}}
+  .edgeRow input::-webkit-outer-spin-button, .edgeRow input::-webkit-inner-spin-button{{-webkit-appearance:none; margin:0;}}
   .edgeRow input::placeholder{{color:#5a6676;}}
   .edgeBtn{{background:var(--green); color:#04140a; border:none; border-radius:6px; padding:6px 12px; font-size:12px; font-weight:700; cursor:pointer;}}
   .edgeOut{{font-size:12px; font-weight:700; color:var(--sub); flex-basis:100%;}}
   .propLabel{{font-size:11px; color:var(--sub); text-transform:uppercase; letter-spacing:.04em; margin-top:4px;}}
+  .topBar{{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;}}
+  .downloadBtn{{background:var(--panel2); border:1px solid var(--border); color:var(--text); font-size:13px; font-weight:600; padding:8px 14px; border-radius:8px; cursor:pointer;}}
+  .downloadBtn:active{{opacity:.8;}}
 </style></head>
 <body>
-<h1>⚾ Strike Zone — Daily Slate</h1>
-<div class="sub">{date} · generated {generated}</div>
+<div class="topBar">
+  <div>
+    <h1>⚾ Strike Zone — Daily Slate</h1>
+    <div class="sub">{date} · generated {generated}</div>
+  </div>
+  <button class="downloadBtn" onclick="exportCSV()">⬇ Download CSV</button>
+</div>
 {games_html}
 <div class="footnote">Projections blend season K-rate/batter-faced with a recency-weighted last-5 rate ({weight}% recent), adjust for opponent K% and BB/9-driven outing length, then use a Poisson distribution for the range. Enter a book's line/odds under any pitcher to compute a de-vigged edge — that math runs entirely in your browser, no data leaves the page.</div>
 <script>
+const REPORT_DATE = "{date}";
 function poissonCDF(threshold, lambda){{
   let p = Math.exp(-lambda), cum = p;
   for(let i=1;i<=threshold;i++){{ p = p*lambda/i; cum += p; }}
   return cum;
 }}
-function calcEdge(btn, kind){{
+function calcEdge(btn){{
+  const kind = btn.dataset.kind;
   const row = btn.closest('.pitcherRow');
   const lambda = parseFloat(row.dataset[kind]);
   const wrap = btn.closest('.edgeRow');
@@ -483,6 +494,47 @@ function calcEdge(btn, kind){{
   }}
   out.textContent = text;
 }}
+
+function csvEscape(v){{
+  return `"${{String(v==null?'':v).replace(/"/g,'""')}}"`;
+}}
+
+function exportCSV(){{
+  const header = ['Date','Matchup','GameTime','PlayerOrTeam','PropType','ProjectedMean','Line','OverOdds','UnderOdds','ModelResult','ActualResult','HitOrMiss'];
+  const rows = [header];
+  document.querySelectorAll('.gameGroup').forEach(game => {{
+    const spans = game.querySelectorAll('.gameHead span');
+    const matchup = spans[0] ? spans[0].textContent.trim() : '';
+    const gameTime = spans[1] ? spans[1].textContent.trim() : '';
+    game.querySelectorAll('.pitcherRow').forEach(row => {{
+      const nameEl = row.querySelector('.pName');
+      const name = nameEl ? nameEl.textContent.trim() : '';
+      row.querySelectorAll('.edgeRow').forEach(er => {{
+        const btn = er.querySelector('.edgeBtn');
+        const kind = btn ? btn.dataset.kind : '';
+        const lam = kind ? row.dataset[kind] : '';
+        const labelEl = er.previousElementSibling;
+        const propLabel = labelEl ? labelEl.textContent.split('(')[0].trim() : '';
+        const line = er.querySelector('.lineInput').value;
+        const overOdds = er.querySelector('.overInput').value;
+        const underOdds = er.querySelector('.underInput').value;
+        const modelResultEl = er.querySelector('.edgeOut');
+        const modelResult = modelResultEl ? modelResultEl.textContent.trim() : '';
+        rows.push([REPORT_DATE, matchup, gameTime, name, propLabel, lam, line, overOdds, underOdds, modelResult, '', '']);
+      }});
+    }});
+  }});
+  const csv = rows.map(r => r.map(csvEscape).join(',')).join('\\n');
+  const blob = new Blob([csv], {{type:'text/csv;charset=utf-8;'}});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `strike_zone_${{REPORT_DATE}}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}}
 </script>
 </body></html>
 """
@@ -509,7 +561,7 @@ TEAM_RUN_ROW = """<div class="pitcherRow" data-runs_lambda="{lam}">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <button class="edgeBtn" data-kind="runs_lambda" onclick="calcEdge(this)">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>"""
@@ -530,7 +582,7 @@ TEAM_HIT_ROW = """<div class="pitcherRow" data-hits_lambda="{lam}">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <button class="edgeBtn" data-kind="hits_lambda" onclick="calcEdge(this)">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>"""
@@ -551,7 +603,7 @@ PITCHER_ROW = """<div class="pitcherRow" data-lambda="{lam}" data-outs_lambda="{
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <button class="edgeBtn" data-kind="lambda" onclick="calcEdge(this)">Edge</button>
     <div class="edgeOut"></div>
   </div>
   <div class="propLabel">Outs Recorded <span class="pProjSub">(proj {outs_lam} · {outs_lo}–{outs_hi} range)</span></div>
@@ -559,7 +611,7 @@ PITCHER_ROW = """<div class="pitcherRow" data-lambda="{lam}" data-outs_lambda="{
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <button class="edgeBtn" data-kind="outs_lambda" onclick="calcEdge(this)">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>"""
