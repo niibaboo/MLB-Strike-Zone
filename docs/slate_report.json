@@ -362,7 +362,7 @@
       "home": {
         "team": "Colorado Rockies",
         "opp": "Baltimore Orioles",
-        "lambda": 8.49,
+        "lambda": 8.48,
         "lo": 5,
         "hi": 12,
         "l5_str": "8\u00b77\u00b78\u00b710\u00b77",
@@ -433,10 +433,10 @@
       "home": {
         "team": "Arizona Diamondbacks",
         "opp": "Philadelphia Phillies",
-        "lambda": 3.04,
+        "lambda": 3.33,
         "lo": 1,
-        "hi": 5,
-        "l5_str": "7\u00b72\u00b71\u00b71\u00b70",
+        "hi": 6,
+        "l5_str": "7\u00b72\u00b71\u00b71\u00b71",
         "season_rpg": 4.45,
         "run_factor": 1.26
       }
@@ -455,11 +455,11 @@
       "home": {
         "team": "Arizona Diamondbacks",
         "opp": "Philadelphia Phillies",
-        "lambda": 6.75,
+        "lambda": 7.0,
         "lo": 4,
         "hi": 10,
-        "l5_str": "9\u00b77\u00b79\u00b76\u00b72",
-        "season_hpg": 8.11,
+        "l5_str": "9\u00b77\u00b79\u00b76\u00b73",
+        "season_hpg": 8.12,
         "hit_factor": 1.05
       }
     }
@@ -538,11 +538,11 @@
       "away": {
         "team": "Seattle Mariners",
         "opp": "Boston Red Sox",
-        "lambda": 8.9,
+        "lambda": 9.16,
         "lo": 5,
         "hi": 13,
-        "l5_str": "6\u00b71\u00b711\u00b714\u00b75",
-        "season_hpg": 7.53,
+        "l5_str": "6\u00b71\u00b711\u00b714\u00b76",
+        "season_hpg": 7.54,
         "hit_factor": 1.14
       },
       "home": {
