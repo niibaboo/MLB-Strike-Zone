@@ -23,31 +23,118 @@
   .edgeRow input::placeholder{color:#5a6676;}
   .edgeBtn{background:var(--green); color:#04140a; border:none; border-radius:6px; padding:6px 12px; font-size:12px; font-weight:700; cursor:pointer;}
   .edgeOut{font-size:12px; font-weight:700; color:var(--sub); flex-basis:100%;}
+  .propLabel{font-size:11px; color:var(--sub); text-transform:uppercase; letter-spacing:.04em; margin-top:4px;}
 </style></head>
 <body>
 <h1>⚾ Strike Zone — Daily Slate</h1>
-<div class="sub">2026-09-02 · generated 2026-09-02 18:30</div>
+<div class="sub">2026-09-02 · generated 2026-09-02 21:09</div>
 <div class="gameGroup">
   <div class="gameHead"><span>San Diego Padres @ Cincinnati Reds</span><span>04:40 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="3.72">
+  <div class="pitcherRow" data-runs_lambda="5.13">
+  <div class="pTop">
+    <div>
+      <div class="pName">San Diego Padres — Total Runs</div>
+      <div class="pMeta">vs Cincinnati Reds · L5 runs: 6·4·5·3·3 · season 4.24/gm · pitching-adj ×1.3</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">5.13</div>
+      <div class="pProjSub">2–8 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="8.6">
+  <div class="pTop">
+    <div>
+      <div class="pName">San Diego Padres — Total Hits</div>
+      <div class="pMeta">vs Cincinnati Reds · L5 hits: 10·6·15·7·7 · season 7.83/gm · pitching-adj ×1.03</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">8.6</div>
+      <div class="pProjSub">5–12 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="4.33">
+  <div class="pTop">
+    <div>
+      <div class="pName">Cincinnati Reds — Total Runs</div>
+      <div class="pMeta">vs San Diego Padres · L5 runs: 5·7·0·4·7 · season 4.15/gm · pitching-adj ×0.95</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.33</div>
+      <div class="pProjSub">2–7 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="7.68">
+  <div class="pTop">
+    <div>
+      <div class="pName">Cincinnati Reds — Total Hits</div>
+      <div class="pMeta">vs San Diego Padres · L5 hits: 7·11·5·8·10 · season 7.6/gm · pitching-adj ×0.94</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">7.68</div>
+      <div class="pProjSub">4–11 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="3.71" data-outs_lambda="14.2">
   <div class="pTop">
     <div>
       <div class="pName">Casey Mize</div>
       <div class="pMeta">San Diego Padres vs Cincinnati Reds · L5 Ks: 6·3·0·1·4 (-34% vs season) · BB/9 2.22</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">3.72</div>
+      <div class="pProjNum">3.71</div>
       <div class="pProjSub">1–6 range · 4.7 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="3.21">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 14.2 · 9–19 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="3.21" data-outs_lambda="12.04">
   <div class="pTop">
     <div>
       <div class="pName">Brandon Williamson</div>
@@ -58,17 +145,103 @@
       <div class="pProjSub">1–6 range · 4.0 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 12.04 · 8–17 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Atlanta Braves @ Washington Nationals</span><span>05:05 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="2.72">
+  <div class="pitcherRow" data-runs_lambda="5.75">
+  <div class="pTop">
+    <div>
+      <div class="pName">Atlanta Braves — Total Runs</div>
+      <div class="pMeta">vs Washington Nationals · L5 runs: 2·3·3·5·9 · season 4.66/gm · pitching-adj ×1.1</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">5.75</div>
+      <div class="pProjSub">3–9 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="8.85">
+  <div class="pTop">
+    <div>
+      <div class="pName">Atlanta Braves — Total Hits</div>
+      <div class="pMeta">vs Washington Nationals · L5 hits: 6·10·9·8·11 · season 8.41/gm · pitching-adj ×0.98</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">8.85</div>
+      <div class="pProjSub">5–13 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="4.0">
+  <div class="pTop">
+    <div>
+      <div class="pName">Washington Nationals — Total Runs</div>
+      <div class="pMeta">vs Atlanta Braves · L5 runs: 5·2·6·9·0 · season 5.18/gm · pitching-adj ×0.9</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.0</div>
+      <div class="pProjSub">2–7 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="7.15">
+  <div class="pTop">
+    <div>
+      <div class="pName">Washington Nationals — Total Hits</div>
+      <div class="pMeta">vs Atlanta Braves · L5 hits: 9·6·11·12·2 · season 8.46/gm · pitching-adj ×0.93</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">7.15</div>
+      <div class="pProjSub">4–11 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="2.72" data-outs_lambda="13.88">
   <div class="pTop">
     <div>
       <div class="pName">Grant Holmes</div>
@@ -79,14 +252,23 @@
       <div class="pProjSub">1–5 range · 4.6 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="2.59">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 13.88 · 9–19 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="2.59" data-outs_lambda="6.88">
   <div class="pTop">
     <div>
       <div class="pName">Brad Lord</div>
@@ -97,173 +279,639 @@
       <div class="pProjSub">1–5 range · 2.3 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 6.88 · 4–10 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Athletics @ Texas Rangers</span><span>06:35 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="6.4">
+  <div class="pitcherRow" data-runs_lambda="5.6">
+  <div class="pTop">
+    <div>
+      <div class="pName">Athletics — Total Runs</div>
+      <div class="pMeta">vs Texas Rangers · L5 runs: 3·5·1·5·9 · season 4.36/gm · pitching-adj ×1.1</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">5.6</div>
+      <div class="pProjSub">3–9 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="11.79">
+  <div class="pTop">
+    <div>
+      <div class="pName">Athletics — Total Hits</div>
+      <div class="pMeta">vs Texas Rangers · L5 hits: 10·9·3·11·13 · season 8.36/gm · pitching-adj ×1.26</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">11.79</div>
+      <div class="pProjSub">8–16 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="6.08">
+  <div class="pTop">
+    <div>
+      <div class="pName">Texas Rangers — Total Runs</div>
+      <div class="pMeta">vs Athletics · L5 runs: 3·7·8·8·2 · season 4.09/gm · pitching-adj ×1.25</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.08</div>
+      <div class="pProjSub">3–9 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="9.43">
+  <div class="pTop">
+    <div>
+      <div class="pName">Texas Rangers — Total Hits</div>
+      <div class="pMeta">vs Athletics · L5 hits: 8·10·9·12·8 · season 8.06/gm · pitching-adj ×1.05</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">9.43</div>
+      <div class="pProjSub">6–13 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="6.47" data-outs_lambda="17.21">
   <div class="pTop">
     <div>
       <div class="pName">Jacob Lopez</div>
-      <div class="pMeta">Athletics vs Texas Rangers · L5 Ks: 9·5·6·9·6 (+25% vs season) · BB/9 4.55</div>
+      <div class="pMeta">Athletics vs Texas Rangers · L5 Ks: 5·6·9·6·7 (+19% vs season) · BB/9 4.46</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">6.4</div>
-      <div class="pProjSub">3–10 range · 5.5 IP</div>
+      <div class="pProjNum">6.47</div>
+      <div class="pProjSub">3–10 range · 5.7 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="2.27">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 17.21 · 12–23 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="2.51" data-outs_lambda="15.6">
   <div class="pTop">
     <div>
       <div class="pName">Cody Bradford</div>
-      <div class="pMeta">Texas Rangers vs Athletics · L5 Ks: 5·1·4·3·0 (-22% vs season) · BB/9 2.05</div>
+      <div class="pMeta">Texas Rangers vs Athletics · L5 Ks: 1·4·3·0·3 (-16% vs season) · BB/9 2.08</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">2.27</div>
-      <div class="pProjSub">1–4 range · 5.3 IP</div>
+      <div class="pProjNum">2.51</div>
+      <div class="pProjSub">1–5 range · 5.2 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 15.6 · 11–21 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Baltimore Orioles @ Colorado Rockies</span><span>07:10 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="5.99">
+  <div class="pitcherRow" data-runs_lambda="5.02">
+  <div class="pTop">
+    <div>
+      <div class="pName">Baltimore Orioles — Total Runs</div>
+      <div class="pMeta">vs Colorado Rockies · L5 runs: 5·8·2·2·3 · season 4.52/gm · pitching-adj ×1.33</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">5.02</div>
+      <div class="pProjSub">2–8 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="8.32">
+  <div class="pTop">
+    <div>
+      <div class="pName">Baltimore Orioles — Total Hits</div>
+      <div class="pMeta">vs Colorado Rockies · L5 hits: 7·7·4·7·7 · season 7.82/gm · pitching-adj ×1.2</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">8.32</div>
+      <div class="pProjSub">5–12 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="3.27">
+  <div class="pTop">
+    <div>
+      <div class="pName">Colorado Rockies — Total Runs</div>
+      <div class="pMeta">vs Baltimore Orioles · L5 runs: 1·2·1·4·2 · season 4.65/gm · pitching-adj ×1.06</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">3.27</div>
+      <div class="pProjSub">1–6 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="8.26">
+  <div class="pTop">
+    <div>
+      <div class="pName">Colorado Rockies — Total Hits</div>
+      <div class="pMeta">vs Baltimore Orioles · L5 hits: 8·7·8·10·6 · season 8.56/gm · pitching-adj ×1.03</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">8.26</div>
+      <div class="pProjSub">5–12 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="6.95" data-outs_lambda="17.0">
   <div class="pTop">
     <div>
       <div class="pName">Trevor Rogers</div>
-      <div class="pMeta">Baltimore Orioles vs Colorado Rockies · L5 Ks: 9·4·6·6·7 (+28% vs season) · BB/9 2.42</div>
+      <div class="pMeta">Baltimore Orioles vs Colorado Rockies · L5 Ks: 4·6·6·7·11 (+46% vs season) · BB/9 2.31</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">5.99</div>
-      <div class="pProjSub">3–9 range · 5.6 IP</div>
+      <div class="pProjNum">6.95</div>
+      <div class="pProjSub">4–10 range · 5.7 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="3.65">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 17.0 · 12–22 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="3.67" data-outs_lambda="14.4">
   <div class="pTop">
     <div>
       <div class="pName">Tomoyuki Sugano</div>
-      <div class="pMeta">Colorado Rockies vs Baltimore Orioles · L5 Ks: 3·5·3·2·4 (+32% vs season) · BB/9 2.08</div>
+      <div class="pMeta">Colorado Rockies vs Baltimore Orioles · L5 Ks: 5·3·2·4·4 (+24% vs season) · BB/9 2.05</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">3.65</div>
-      <div class="pProjSub">1–6 range · 4.6 IP</div>
+      <div class="pProjNum">3.67</div>
+      <div class="pProjSub">1–6 range · 4.8 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 14.4 · 10–19 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Philadelphia Phillies @ Arizona Diamondbacks</span><span>07:40 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="4.37">
+  <div class="pitcherRow" data-runs_lambda="2.28">
+  <div class="pTop">
+    <div>
+      <div class="pName">Philadelphia Phillies — Total Runs</div>
+      <div class="pMeta">vs Arizona Diamondbacks · L5 runs: 4·5·2·7·0 · season 4.51/gm · pitching-adj ×0.63</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">2.28</div>
+      <div class="pProjSub">1–4 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="5.36">
+  <div class="pTop">
+    <div>
+      <div class="pName">Philadelphia Phillies — Total Hits</div>
+      <div class="pMeta">vs Arizona Diamondbacks · L5 hits: 7·10·6·13·2 · season 8.13/gm · pitching-adj ×0.73</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">5.36</div>
+      <div class="pProjSub">3–8 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="3.04">
+  <div class="pTop">
+    <div>
+      <div class="pName">Arizona Diamondbacks — Total Runs</div>
+      <div class="pMeta">vs Philadelphia Phillies · L5 runs: 7·2·1·1·0 · season 4.45/gm · pitching-adj ×1.26</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">3.04</div>
+      <div class="pProjSub">1–5 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.52">
+  <div class="pTop">
+    <div>
+      <div class="pName">Arizona Diamondbacks — Total Hits</div>
+      <div class="pMeta">vs Philadelphia Phillies · L5 hits: 9·7·9·6·1 · season 8.11/gm · pitching-adj ×1.05</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.52</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="4.59" data-outs_lambda="17.09">
   <div class="pTop">
     <div>
       <div class="pName">Andrew Painter</div>
-      <div class="pMeta">Philadelphia Phillies vs Arizona Diamondbacks · L5 Ks: 4·6·2·8·6 (+12% vs season) · BB/9 3.39</div>
+      <div class="pMeta">Philadelphia Phillies vs Arizona Diamondbacks · L5 Ks: 6·2·8·6·5 (+10% vs season) · BB/9 3.21</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">4.37</div>
-      <div class="pProjSub">2–7 range · 5.4 IP</div>
+      <div class="pProjNum">4.59</div>
+      <div class="pProjSub">2–7 range · 5.7 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="37.09">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 17.09 · 12–22 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="38.06" data-outs_lambda="192.89">
   <div class="pTop">
     <div>
       <div class="pName">Taylor Clarke</div>
-      <div class="pMeta">Arizona Diamondbacks vs Philadelphia Phillies · L5 Ks: — (+0% vs season) · BB/9 1.59</div>
+      <div class="pMeta">Arizona Diamondbacks vs Philadelphia Phillies · L5 Ks: 1 (+0% vs season) · BB/9 1.69</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">37.09</div>
-      <div class="pProjSub">29–0 range · 62.7 IP</div>
+      <div class="pProjNum">38.06</div>
+      <div class="pProjSub">30–0 range · 64.3 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 192.89 · 0–0 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Seattle Mariners @ Boston Red Sox</span><span>08:10 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="4.46">
+  <div class="pitcherRow" data-runs_lambda="4.94">
+  <div class="pTop">
+    <div>
+      <div class="pName">Seattle Mariners — Total Runs</div>
+      <div class="pMeta">vs Boston Red Sox · L5 runs: 3·0·8·9·4 · season 3.94/gm · pitching-adj ×1.02</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.94</div>
+      <div class="pProjSub">2–8 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="8.55">
+  <div class="pTop">
+    <div>
+      <div class="pName">Seattle Mariners — Total Hits</div>
+      <div class="pMeta">vs Boston Red Sox · L5 hits: 6·1·11·14·4 · season 7.52/gm · pitching-adj ×1.13</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">8.55</div>
+      <div class="pProjSub">5–12 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="3.87">
+  <div class="pTop">
+    <div>
+      <div class="pName">Boston Red Sox — Total Runs</div>
+      <div class="pMeta">vs Seattle Mariners · L5 runs: 2·1·9·6·0 · season 4.46/gm · pitching-adj ×1.02</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">3.87</div>
+      <div class="pProjSub">1–6 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="7.53">
+  <div class="pTop">
+    <div>
+      <div class="pName">Boston Red Sox — Total Hits</div>
+      <div class="pMeta">vs Seattle Mariners · L5 hits: 6·7·12·11·4 · season 8.35/gm · pitching-adj ×0.95</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">7.53</div>
+      <div class="pProjSub">4–11 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="3.7" data-outs_lambda="13.8">
   <div class="pTop">
     <div>
       <div class="pName">Bryce Miller</div>
-      <div class="pMeta">Seattle Mariners vs Boston Red Sox · L5 Ks: 3·5·5·3·5 (-10% vs season) · BB/9 2.39</div>
+      <div class="pMeta">Seattle Mariners vs Boston Red Sox · L5 Ks: 5·5·3·5·1 (-20% vs season) · BB/9 2.32</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">4.46</div>
-      <div class="pProjSub">2–7 range · 5.1 IP</div>
+      <div class="pProjNum">3.7</div>
+      <div class="pProjSub">1–6 range · 4.6 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="5.89">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 13.8 · 9–19 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="5.05" data-outs_lambda="14.05">
   <div class="pTop">
     <div>
       <div class="pName">Patrick Sandoval</div>
-      <div class="pMeta">Boston Red Sox vs Seattle Mariners · L5 Ks: 5·4·6·6·7 (+8% vs season) · BB/9 4.4</div>
+      <div class="pMeta">Boston Red Sox vs Seattle Mariners · L5 Ks: 4·6·6·7·2 (-1% vs season) · BB/9 4.25</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">5.89</div>
-      <div class="pProjSub">3–9 range · 5.0 IP</div>
+      <div class="pProjNum">5.05</div>
+      <div class="pProjSub">2–8 range · 4.7 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 14.05 · 9–19 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>San Francisco Giants @ Pittsburgh Pirates</span><span>10:40 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="4.19">
+  <div class="pitcherRow" data-runs_lambda="7.0">
+  <div class="pTop">
+    <div>
+      <div class="pName">San Francisco Giants — Total Runs</div>
+      <div class="pMeta">vs Pittsburgh Pirates · L5 runs: 6·1·7·7·12 · season 4.17/gm · pitching-adj ×1.06</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">7.0</div>
+      <div class="pProjSub">4–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="9.27">
+  <div class="pTop">
+    <div>
+      <div class="pName">San Francisco Giants — Total Hits</div>
+      <div class="pMeta">vs Pittsburgh Pirates · L5 hits: 5·4·9·11·16 · season 8.43/gm · pitching-adj ×0.92</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">9.27</div>
+      <div class="pProjSub">5–13 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="6.77">
+  <div class="pTop">
+    <div>
+      <div class="pName">Pittsburgh Pirates — Total Runs</div>
+      <div class="pMeta">vs San Francisco Giants · L5 runs: 0·1·6·5·13 · season 4.91/gm · pitching-adj ×1.08</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.77</div>
+      <div class="pProjSub">4–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="10.11">
+  <div class="pTop">
+    <div>
+      <div class="pName">Pittsburgh Pirates — Total Hits</div>
+      <div class="pMeta">vs San Francisco Giants · L5 hits: 5·6·11·8·19 · season 8.75/gm · pitching-adj ×0.94</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">10.11</div>
+      <div class="pProjSub">6–14 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="4.19" data-outs_lambda="15.02">
   <div class="pTop">
     <div>
       <div class="pName">Landen Roupp</div>
@@ -274,14 +922,23 @@
       <div class="pProjSub">2–7 range · 5.0 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="4.26">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 15.02 · 10–20 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="4.26" data-outs_lambda="15.01">
   <div class="pTop">
     <div>
       <div class="pName">Bubba Chandler</div>
@@ -292,17 +949,103 @@
       <div class="pProjSub">2–7 range · 5.0 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 15.01 · 10–20 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>New York Mets @ Tampa Bay Rays</span><span>10:40 PM UTC</span></div>
-  <div class="noPitcher">Justin Hagenman: no stats available</div><div class="pitcherRow" data-lambda="6.95">
+  <div class="pitcherRow" data-runs_lambda="3.02">
+  <div class="pTop">
+    <div>
+      <div class="pName">New York Mets — Total Runs</div>
+      <div class="pMeta">vs Tampa Bay Rays · L5 runs: 1·6·3·3·2 · season 4.08/gm · pitching-adj ×0.92</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">3.02</div>
+      <div class="pProjSub">1–5 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.37">
+  <div class="pTop">
+    <div>
+      <div class="pName">New York Mets — Total Hits</div>
+      <div class="pMeta">vs Tampa Bay Rays · L5 hits: 5·11·5·10·3 · season 7.89/gm · pitching-adj ×0.93</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.37</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="5.02">
+  <div class="pTop">
+    <div>
+      <div class="pName">Tampa Bay Rays — Total Runs</div>
+      <div class="pMeta">vs New York Mets · L5 runs: 9·7·5·2·6 · season 4.52/gm · pitching-adj ×1.01</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">5.02</div>
+      <div class="pProjSub">2–8 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="9.72">
+  <div class="pTop">
+    <div>
+      <div class="pName">Tampa Bay Rays — Total Hits</div>
+      <div class="pMeta">vs New York Mets · L5 hits: 11·11·7·9·13 · season 8.77/gm · pitching-adj ×0.98</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">9.72</div>
+      <div class="pProjSub">6–14 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="noPitcher">Justin Hagenman: no stats available</div><div class="pitcherRow" data-lambda="6.95" data-outs_lambda="16.0">
   <div class="pTop">
     <div>
       <div class="pName">Griffin Jax</div>
@@ -313,17 +1056,103 @@
       <div class="pProjSub">4–10 range · 5.3 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 16.0 · 11–21 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Toronto Blue Jays @ Cleveland Guardians</span><span>10:40 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="8.09">
+  <div class="pitcherRow" data-runs_lambda="3.7">
+  <div class="pTop">
+    <div>
+      <div class="pName">Toronto Blue Jays — Total Runs</div>
+      <div class="pMeta">vs Cleveland Guardians · L5 runs: 2·8·4·7·1 · season 3.95/gm · pitching-adj ×0.93</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">3.7</div>
+      <div class="pProjSub">1–6 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.91">
+  <div class="pTop">
+    <div>
+      <div class="pName">Toronto Blue Jays — Total Hits</div>
+      <div class="pMeta">vs Cleveland Guardians · L5 hits: 8·11·5·10·3 · season 8.24/gm · pitching-adj ×0.96</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.91</div>
+      <div class="pProjSub">4–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="3.72">
+  <div class="pTop">
+    <div>
+      <div class="pName">Cleveland Guardians — Total Runs</div>
+      <div class="pMeta">vs Toronto Blue Jays · L5 runs: 4·0·3·11·6 · season 4.08/gm · pitching-adj ×0.72</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">3.72</div>
+      <div class="pProjSub">1–6 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.39">
+  <div class="pTop">
+    <div>
+      <div class="pName">Cleveland Guardians — Total Hits</div>
+      <div class="pMeta">vs Toronto Blue Jays · L5 hits: 12·6·5·13·8 · season 7.89/gm · pitching-adj ×0.75</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.39</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="8.09" data-outs_lambda="18.1">
   <div class="pTop">
     <div>
       <div class="pName">Dylan Cease</div>
@@ -334,14 +1163,23 @@
       <div class="pProjSub">5–12 range · 6.0 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="3.25">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 18.1 · 13–24 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="3.25" data-outs_lambda="12.94">
   <div class="pTop">
     <div>
       <div class="pName">Joey Cantillo</div>
@@ -352,17 +1190,103 @@
       <div class="pProjSub">1–6 range · 4.3 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 12.94 · 8–18 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Detroit Tigers @ Minnesota Twins</span><span>11:40 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="4.04">
+  <div class="pitcherRow" data-runs_lambda="3.22">
+  <div class="pTop">
+    <div>
+      <div class="pName">Detroit Tigers — Total Runs</div>
+      <div class="pMeta">vs Minnesota Twins · L5 runs: 1·2·1·1·2 · season 4.34/gm · pitching-adj ×1.3</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">3.22</div>
+      <div class="pProjSub">1–6 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.38">
+  <div class="pTop">
+    <div>
+      <div class="pName">Detroit Tigers — Total Hits</div>
+      <div class="pMeta">vs Minnesota Twins · L5 hits: 5·6·2·5·8 · season 7.98/gm · pitching-adj ×0.99</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.38</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="7.43">
+  <div class="pTop">
+    <div>
+      <div class="pName">Minnesota Twins — Total Runs</div>
+      <div class="pMeta">vs Detroit Tigers · L5 runs: 4·2·5·11·15 · season 4.69/gm · pitching-adj ×0.95</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">7.43</div>
+      <div class="pProjSub">4–11 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="9.04">
+  <div class="pTop">
+    <div>
+      <div class="pName">Minnesota Twins — Total Hits</div>
+      <div class="pMeta">vs Detroit Tigers · L5 hits: 12·5·9·9·13 · season 8.32/gm · pitching-adj ×0.95</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">9.04</div>
+      <div class="pProjSub">5–13 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="4.04" data-outs_lambda="13.13">
   <div class="pTop">
     <div>
       <div class="pName">Drew Anderson</div>
@@ -373,14 +1297,23 @@
       <div class="pProjSub">2–7 range · 4.4 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="4.98">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 13.13 · 9–18 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="4.98" data-outs_lambda="15.92">
   <div class="pTop">
     <div>
       <div class="pName">Dean Kremer</div>
@@ -391,17 +1324,103 @@
       <div class="pProjSub">2–8 range · 5.3 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 15.92 · 11–21 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Miami Marlins @ Kansas City Royals</span><span>11:40 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="5.36">
+  <div class="pitcherRow" data-runs_lambda="4.71">
+  <div class="pTop">
+    <div>
+      <div class="pName">Miami Marlins — Total Runs</div>
+      <div class="pMeta">vs Kansas City Royals · L5 runs: 2·4·6·3·6 · season 4.34/gm · pitching-adj ×1.04</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.71</div>
+      <div class="pProjSub">2–8 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="7.54">
+  <div class="pTop">
+    <div>
+      <div class="pName">Miami Marlins — Total Hits</div>
+      <div class="pMeta">vs Kansas City Royals · L5 hits: 5·6·4·11·8 · season 8.22/gm · pitching-adj ×0.97</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">7.54</div>
+      <div class="pProjSub">4–11 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="3.92">
+  <div class="pTop">
+    <div>
+      <div class="pName">Kansas City Royals — Total Runs</div>
+      <div class="pMeta">vs Miami Marlins · L5 runs: 13·3·8·1·3 · season 4.27/gm · pitching-adj ×0.91</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">3.92</div>
+      <div class="pProjSub">2–7 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.98">
+  <div class="pTop">
+    <div>
+      <div class="pName">Kansas City Royals — Total Hits</div>
+      <div class="pMeta">vs Miami Marlins · L5 hits: 16·9·12·7·6 · season 8.3/gm · pitching-adj ×0.82</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.98</div>
+      <div class="pProjSub">4–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="5.36" data-outs_lambda="15.2">
   <div class="pTop">
     <div>
       <div class="pName">Eury Pérez</div>
@@ -412,14 +1431,23 @@
       <div class="pProjSub">3–8 range · 5.1 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="4.76">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 15.2 · 10–20 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="4.76" data-outs_lambda="20.2">
   <div class="pTop">
     <div>
       <div class="pName">Noah Cameron</div>
@@ -430,17 +1458,103 @@
       <div class="pProjSub">2–8 range · 6.7 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 20.2 · 15–26 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Milwaukee Brewers @ Chicago Cubs</span><span>11:40 PM UTC</span></div>
-  <div class="pitcherRow" data-lambda="7.42">
+  <div class="pitcherRow" data-runs_lambda="6.53">
+  <div class="pTop">
+    <div>
+      <div class="pName">Milwaukee Brewers — Total Runs</div>
+      <div class="pMeta">vs Chicago Cubs · L5 runs: 6·5·4·3·9 · season 5.0/gm · pitching-adj ×1.18</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.53</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="10.52">
+  <div class="pTop">
+    <div>
+      <div class="pName">Milwaukee Brewers — Total Hits</div>
+      <div class="pMeta">vs Chicago Cubs · L5 hits: 14·7·7·9·13 · season 8.68/gm · pitching-adj ×1.08</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">10.52</div>
+      <div class="pProjSub">6–15 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="4.56">
+  <div class="pTop">
+    <div>
+      <div class="pName">Chicago Cubs — Total Runs</div>
+      <div class="pMeta">vs Milwaukee Brewers · L5 runs: 8·17·5·17·4 · season 5.37/gm · pitching-adj ×0.57</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.56</div>
+      <div class="pProjSub">2–7 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="7.22">
+  <div class="pTop">
+    <div>
+      <div class="pName">Chicago Cubs — Total Hits</div>
+      <div class="pMeta">vs Milwaukee Brewers · L5 hits: 13·19·9·20·6 · season 8.71/gm · pitching-adj ×0.65</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">7.22</div>
+      <div class="pProjSub">4–11 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="7.42" data-outs_lambda="18.6">
   <div class="pTop">
     <div>
       <div class="pName">Jacob Misiorowski</div>
@@ -451,14 +1565,23 @@
       <div class="pProjSub">4–11 range · 6.2 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="5.55">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 18.6 · 13–24 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="5.55" data-outs_lambda="16.01">
   <div class="pTop">
     <div>
       <div class="pName">David Peterson</div>
@@ -469,17 +1592,103 @@
       <div class="pProjSub">3–9 range · 5.3 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 16.01 · 11–21 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>Chicago White Sox @ Houston Astros</span><span>12:10 AM UTC</span></div>
-  <div class="pitcherRow" data-lambda="3.16">
+  <div class="pitcherRow" data-runs_lambda="4.26">
+  <div class="pTop">
+    <div>
+      <div class="pName">Chicago White Sox — Total Runs</div>
+      <div class="pMeta">vs Houston Astros · L5 runs: 7·3·1·3·5 · season 4.78/gm · pitching-adj ×1.04</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.26</div>
+      <div class="pProjSub">2–7 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.33">
+  <div class="pTop">
+    <div>
+      <div class="pName">Chicago White Sox — Total Hits</div>
+      <div class="pMeta">vs Houston Astros · L5 hits: 10·3·6·5·8 · season 7.99/gm · pitching-adj ×0.91</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.33</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="4.04">
+  <div class="pTop">
+    <div>
+      <div class="pName">Houston Astros — Total Runs</div>
+      <div class="pMeta">vs Chicago White Sox · L5 runs: 3·2·6·6·1 · season 4.54/gm · pitching-adj ×1.05</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.04</div>
+      <div class="pProjSub">2–7 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.59">
+  <div class="pTop">
+    <div>
+      <div class="pName">Houston Astros — Total Hits</div>
+      <div class="pMeta">vs Chicago White Sox · L5 hits: 4·4·10·8·3 · season 8.07/gm · pitching-adj ×1.01</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.59</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="3.16" data-outs_lambda="11.4">
   <div class="pTop">
     <div>
       <div class="pName">Davis Martin</div>
@@ -490,14 +1699,23 @@
       <div class="pProjSub">1–6 range · 3.8 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="5.4">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 11.4 · 7–16 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="5.4" data-outs_lambda="16.05">
   <div class="pTop">
     <div>
       <div class="pName">Hayden Wesneski</div>
@@ -508,17 +1726,103 @@
       <div class="pProjSub">3–8 range · 5.3 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 16.05 · 11–21 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>New York Yankees @ Los Angeles Angels</span><span>01:38 AM UTC</span></div>
-  <div class="pitcherRow" data-lambda="7.62">
+  <div class="pitcherRow" data-runs_lambda="5.63">
+  <div class="pTop">
+    <div>
+      <div class="pName">New York Yankees — Total Runs</div>
+      <div class="pMeta">vs Los Angeles Angels · L5 runs: 0·9·16·1·7 · season 4.53/gm · pitching-adj ×0.95</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">5.63</div>
+      <div class="pProjSub">3–9 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="8.92">
+  <div class="pTop">
+    <div>
+      <div class="pName">New York Yankees — Total Hits</div>
+      <div class="pMeta">vs Los Angeles Angels · L5 hits: 4·13·18·6·14 · season 7.71/gm · pitching-adj ×0.87</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">8.92</div>
+      <div class="pProjSub">5–13 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="2.76">
+  <div class="pTop">
+    <div>
+      <div class="pName">Los Angeles Angels — Total Runs</div>
+      <div class="pMeta">vs New York Yankees · L5 runs: 3·2·2·10·3 · season 4.09/gm · pitching-adj ×0.64</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">2.76</div>
+      <div class="pProjSub">1–5 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.64">
+  <div class="pTop">
+    <div>
+      <div class="pName">Los Angeles Angels — Total Hits</div>
+      <div class="pMeta">vs New York Yankees · L5 hits: 3·4·8·12·9 · season 7.84/gm · pitching-adj ×0.81</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.64</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="pitcherRow" data-lambda="7.62" data-outs_lambda="16.2">
   <div class="pTop">
     <div>
       <div class="pName">Cam Schlittler</div>
@@ -529,14 +1833,23 @@
       <div class="pProjSub">4–11 range · 5.4 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-lambda="6.26">
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 16.2 · 11–21 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-lambda="6.26" data-outs_lambda="18.0">
   <div class="pTop">
     <div>
       <div class="pName">Reid Detmers</div>
@@ -547,17 +1860,103 @@
       <div class="pProjSub">3–10 range · 6.0 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 18.0 · 13–24 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>St. Louis Cardinals @ Los Angeles Dodgers</span><span>02:10 AM UTC</span></div>
-  <div class="noPitcher">Probable pitcher not yet announced</div><div class="pitcherRow" data-lambda="6.84">
+  <div class="pitcherRow" data-runs_lambda="4.43">
+  <div class="pTop">
+    <div>
+      <div class="pName">St. Louis Cardinals — Total Runs</div>
+      <div class="pMeta">vs Los Angeles Dodgers · L5 runs: 7·4·2·4·13 · season 4.48/gm · pitching-adj ×0.72</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.43</div>
+      <div class="pProjSub">2–7 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="6.58">
+  <div class="pTop">
+    <div>
+      <div class="pName">St. Louis Cardinals — Total Hits</div>
+      <div class="pMeta">vs Los Angeles Dodgers · L5 hits: 9·8·3·9·13 · season 8.12/gm · pitching-adj ×0.75</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">6.58</div>
+      <div class="pProjSub">3–10 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-runs_lambda="4.92">
+  <div class="pTop">
+    <div>
+      <div class="pName">Los Angeles Dodgers — Total Runs</div>
+      <div class="pMeta">vs St. Louis Cardinals · L5 runs: 0·2·1·6·8 · season 4.91/gm · pitching-adj ×1.02</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">4.92</div>
+      <div class="pProjSub">2–8 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div><div class="pitcherRow" data-hits_lambda="8.37">
+  <div class="pTop">
+    <div>
+      <div class="pName">Los Angeles Dodgers — Total Hits</div>
+      <div class="pMeta">vs St. Louis Cardinals · L5 hits: 5·9·6·9·9 · season 8.68/gm · pitching-adj ×1.01</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">8.37</div>
+      <div class="pProjSub">5–12 range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>
+  <div class="noPitcher">Probable pitcher not yet announced</div><div class="pitcherRow" data-lambda="6.84" data-outs_lambda="19.4">
   <div class="pTop">
     <div>
       <div class="pName">Yoshinobu Yamamoto</div>
@@ -568,11 +1967,20 @@
       <div class="pProjSub">4–10 range · 6.5 IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj 19.4 · 14–25 range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>
@@ -584,13 +1992,14 @@ function poissonCDF(threshold, lambda){
   for(let i=1;i<=threshold;i++){ p = p*lambda/i; cum += p; }
   return cum;
 }
-function calcEdge(btn){
+function calcEdge(btn, kind){
   const row = btn.closest('.pitcherRow');
-  const lambda = parseFloat(row.dataset.lambda);
-  const line = parseFloat(row.querySelector('.lineInput').value);
-  const overOdds = parseFloat(row.querySelector('.overInput').value);
-  const underOdds = parseFloat(row.querySelector('.underInput').value);
-  const out = row.querySelector('.edgeOut');
+  const lambda = parseFloat(row.dataset[kind]);
+  const wrap = btn.closest('.edgeRow');
+  const line = parseFloat(wrap.querySelector('.lineInput').value);
+  const overOdds = parseFloat(wrap.querySelector('.overInput').value);
+  const underOdds = parseFloat(wrap.querySelector('.underInput').value);
+  const out = wrap.querySelector('.edgeOut');
   if(isNaN(lambda) || isNaN(line)){ out.textContent = 'Enter a line first.'; return; }
   const threshold = Math.floor(line);
   const pUnder = poissonCDF(threshold, lambda);
