@@ -23,6 +23,7 @@ import requests
 
 BASE = "https://statsapi.mlb.com/api/v1"
 LEAGUE_AVG_K_PCT = 22.1
+LEAGUE_AVG_ERA = 4.00
 BF_PER_IP = 4.3
 RECENT_WEIGHT = 0.65
 
@@ -74,6 +75,167 @@ def get_team_k_pct(team_id, season):
     kpct = (so / pa) * 100
     team_k_cache[team_id] = kpct
     return kpct
+
+
+team_hitting_cache = {}
+team_pitching_stat_cache = {}
+team_gamelog_cache = {}
+LEAGUE_AVG_HITS9 = 8.5
+
+
+def get_team_hitting_stat(team_id, season):
+    if team_id in team_hitting_cache:
+        return team_hitting_cache[team_id]
+    r = requests.get(f"{BASE}/teams/{team_id}/stats",
+                      params={"stats": "season", "group": "hitting", "season": season})
+    r.raise_for_status()
+    splits = r.json().get("stats", [{}])[0].get("splits", [])
+    stat = splits[0]["stat"] if splits else None
+    team_hitting_cache[team_id] = stat
+    return stat
+
+
+def get_team_pitching_stat(team_id, season):
+    """Full team-level season pitching stat dict (ERA, hitsPer9Inn, etc.),
+    used as a bullpen-quality proxy for the innings the opposing starter
+    doesn't cover."""
+    if team_id in team_pitching_stat_cache:
+        return team_pitching_stat_cache[team_id]
+    r = requests.get(f"{BASE}/teams/{team_id}/stats",
+                      params={"stats": "season", "group": "pitching", "season": season})
+    r.raise_for_status()
+    splits = r.json().get("stats", [{}])[0].get("splits", [])
+    stat = splits[0]["stat"] if splits else None
+    team_pitching_stat_cache[team_id] = stat
+    return stat
+
+
+def get_team_pitching_era(team_id, season):
+    stat = get_team_pitching_stat(team_id, season)
+    return float(stat["era"]) if stat and stat.get("era") else None
+
+
+def get_team_pitching_hits9(team_id, season):
+    stat = get_team_pitching_stat(team_id, season)
+    return float(stat["hitsPer9Inn"]) if stat and stat.get("hitsPer9Inn") else None
+
+
+def get_team_gamelog_splits(team_id, season):
+    """Cached per-game hitting log for a team — shared source for both the
+    runs and hits last-5 projections so we only fetch it once per team."""
+    if team_id in team_gamelog_cache:
+        return team_gamelog_cache[team_id]
+    r = requests.get(f"{BASE}/teams/{team_id}/stats",
+                      params={"stats": "gameLog", "group": "hitting", "season": season})
+    r.raise_for_status()
+    splits = r.json().get("stats", [{}])[0].get("splits", [])
+    splits.sort(key=lambda s: s["date"])
+    team_gamelog_cache[team_id] = splits
+    return splits
+
+
+def get_team_runs_last5(team_id, season):
+    splits = get_team_gamelog_splits(team_id, season)
+    return [s["stat"]["runs"] for s in splits[-5:]]
+
+
+def get_team_hits_last5(team_id, season):
+    splits = get_team_gamelog_splits(team_id, season)
+    return [s["stat"]["hits"] for s in splits[-5:]]
+
+
+def project_team_runs(team_id, season, opp_starter_era, starter_proj_ip, opp_team_id, weight=RECENT_WEIGHT):
+    """Expected team runs = blended (season + recency) offense rate,
+    adjusted for the specific opposing starter's quality for the innings
+    he's projected to pitch, and the opposing team's overall staff ERA
+    (as an approximation for bullpen quality) for the remaining innings.
+    This is a coarser model than the pitcher props — it can't see bullpen
+    matchups, park factors, or lineup-specific splits, so treat edges here
+    with more skepticism than the K/outs props.
+    """
+    hstat = get_team_hitting_stat(team_id, season)
+    if not hstat:
+        return None
+    games = hstat.get("gamesPlayed") or 1
+    season_rpg = hstat.get("runs", 0) / games
+
+    last5_runs = get_team_runs_last5(team_id, season)
+    if len(last5_runs) >= 2:
+        n = len(last5_runs)
+        wts = [1.4 ** i for i in range(n)]
+        recent_rpg = sum(w * r for w, r in zip(wts, last5_runs)) / sum(wts)
+    else:
+        recent_rpg = season_rpg
+
+    blended_rpg = weight * recent_rpg + (1 - weight) * season_rpg
+
+    starter_share = max(0.0, min(1.0, (starter_proj_ip or 5.5) / 9))
+    bullpen_share = 1 - starter_share
+    opp_team_era = get_team_pitching_era(opp_team_id, season) or LEAGUE_AVG_ERA
+    starter_adj = (opp_starter_era / LEAGUE_AVG_ERA) if opp_starter_era else 1.0
+    bullpen_adj = (opp_team_era / LEAGUE_AVG_ERA)
+    run_factor = starter_share * starter_adj + bullpen_share * bullpen_adj
+
+    lam = blended_rpg * run_factor
+    lo = hi = 0
+    cum = 0.0
+    for i in range(30):
+        cum += poisson_pmf(i, lam)
+        if cum >= 0.10 and lo == 0:
+            lo = i
+        if cum >= 0.90:
+            hi = i
+            break
+
+    l5_str = "·".join(str(r) for r in last5_runs) if last5_runs else "—"
+    return {"lambda": round(lam, 2), "lo": lo, "hi": hi, "l5_str": l5_str,
+            "season_rpg": round(season_rpg, 2), "run_factor": round(run_factor, 2)}
+
+
+def project_team_hits(team_id, season, opp_starter_hits9, starter_proj_ip, opp_team_id, weight=RECENT_WEIGHT):
+    """Same structure as project_team_runs but for team hits allowed —
+    generally more reliable than runs since it doesn't depend on hit
+    *sequencing* (stranding runners doesn't erase a hit the way it erases
+    a run), though it's still a whole-lineup, multi-pitcher stat, so treat
+    it as less reliable than the single-pitcher K/outs props.
+    """
+    hstat = get_team_hitting_stat(team_id, season)
+    if not hstat:
+        return None
+    games = hstat.get("gamesPlayed") or 1
+    season_hpg = hstat.get("hits", 0) / games
+
+    last5_hits = get_team_hits_last5(team_id, season)
+    if len(last5_hits) >= 2:
+        n = len(last5_hits)
+        wts = [1.4 ** i for i in range(n)]
+        recent_hpg = sum(w * h for w, h in zip(wts, last5_hits)) / sum(wts)
+    else:
+        recent_hpg = season_hpg
+
+    blended_hpg = weight * recent_hpg + (1 - weight) * season_hpg
+
+    starter_share = max(0.0, min(1.0, (starter_proj_ip or 5.5) / 9))
+    bullpen_share = 1 - starter_share
+    opp_team_hits9 = get_team_pitching_hits9(opp_team_id, season) or LEAGUE_AVG_HITS9
+    starter_adj = (opp_starter_hits9 / LEAGUE_AVG_HITS9) if opp_starter_hits9 else 1.0
+    bullpen_adj = (opp_team_hits9 / LEAGUE_AVG_HITS9)
+    hit_factor = starter_share * starter_adj + bullpen_share * bullpen_adj
+
+    lam = blended_hpg * hit_factor
+    lo = hi = 0
+    cum = 0.0
+    for i in range(30):
+        cum += poisson_pmf(i, lam)
+        if cum >= 0.10 and lo == 0:
+            lo = i
+        if cum >= 0.90:
+            hi = i
+            break
+
+    l5_str = "·".join(str(h) for h in last5_hits) if last5_hits else "—"
+    return {"lambda": round(lam, 2), "lo": lo, "hi": hi, "l5_str": l5_str,
+            "season_hpg": round(season_hpg, 2), "hit_factor": round(hit_factor, 2)}
 
 
 def get_pitcher_data(pitcher_id, season):
@@ -147,9 +309,23 @@ def project(season_stat, last5, opp_k_pct, weight=RECENT_WEIGHT, bf_per_ip=BF_PE
     l5_str = "·".join(str(s["k"]) for s in last5) if last5 else "—"
     l5_vs_season = ((recent_k_rate / season_k_rate - 1) * 100) if season_k_rate else 0
 
+    # Outs-recorded projection reuses the same projected IP — outs = IP * 3.
+    outs_lambda = proj_ip * 3
+    outs_lo = outs_hi = 0
+    cum = 0.0
+    for i in range(60):
+        cum += poisson_pmf(i, outs_lambda)
+        if cum >= 0.10 and outs_lo == 0:
+            outs_lo = i
+        if cum >= 0.90:
+            outs_hi = i
+            break
+
     return {
         "lambda": round(lam, 2), "lo": lo, "hi": hi, "proj_ip": round(proj_ip, 1),
+        "outs_lambda": round(outs_lambda, 2), "outs_lo": outs_lo, "outs_hi": outs_hi,
         "season_era": season_stat.get("era"), "season_k9": season_stat.get("strikeoutsPer9Inn"),
+        "season_hits9": season_stat.get("hitsPer9Inn"),
         "bb9": bb9, "whip": season_stat.get("whip"),
         "l5_str": l5_str, "l5_vs_season": round(l5_vs_season, 0),
     }
@@ -201,6 +377,42 @@ def build_slate(target_date):
                 entry["pitchers"].append({"side": side_name, "name": prob["fullName"], "error": str(e)})
 
         slate.append(entry)
+
+        # Team run + hit projections: each team's offense vs. the OPPOSING starter (+ that team's bullpen)
+        entry["team_runs"] = {}
+        entry["team_hits"] = {}
+        pitcher_by_side = {p.get("side"): p for p in entry["pitchers"]}
+        for side_name, side, opp in (("away", away, home), ("home", home, away)):
+            opp_side = "home" if side_name == "away" else "away"
+            opp_pitcher = pitcher_by_side.get(opp_side, {})
+            opp_era = opp_pitcher.get("season_era")
+            opp_era = float(opp_era) if opp_era not in (None, "-") else None
+            opp_hits9 = opp_pitcher.get("season_hits9")
+            opp_hits9 = float(opp_hits9) if opp_hits9 not in (None, "-") else None
+            opp_proj_ip = opp_pitcher.get("proj_ip")
+
+            try:
+                tr = project_team_runs(
+                    side["team"]["id"], season, opp_era, opp_proj_ip, opp["team"]["id"]
+                )
+                if tr:
+                    entry["team_runs"][side_name] = {
+                        "team": side["team"]["name"], "opp": opp["team"]["name"], **tr
+                    }
+            except Exception as e:
+                entry["team_runs"][side_name] = {"team": side["team"]["name"], "error": str(e)}
+
+            try:
+                th = project_team_hits(
+                    side["team"]["id"], season, opp_hits9, opp_proj_ip, opp["team"]["id"]
+                )
+                if th:
+                    entry["team_hits"][side_name] = {
+                        "team": side["team"]["name"], "opp": opp["team"]["name"], **th
+                    }
+            except Exception as e:
+                entry["team_hits"][side_name] = {"team": side["team"]["name"], "error": str(e)}
+
     return slate
 
 
@@ -229,6 +441,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   .edgeRow input::placeholder{{color:#5a6676;}}
   .edgeBtn{{background:var(--green); color:#04140a; border:none; border-radius:6px; padding:6px 12px; font-size:12px; font-weight:700; cursor:pointer;}}
   .edgeOut{{font-size:12px; font-weight:700; color:var(--sub); flex-basis:100%;}}
+  .propLabel{{font-size:11px; color:var(--sub); text-transform:uppercase; letter-spacing:.04em; margin-top:4px;}}
 </style></head>
 <body>
 <h1>⚾ Strike Zone — Daily Slate</h1>
@@ -241,13 +454,14 @@ function poissonCDF(threshold, lambda){{
   for(let i=1;i<=threshold;i++){{ p = p*lambda/i; cum += p; }}
   return cum;
 }}
-function calcEdge(btn){{
+function calcEdge(btn, kind){{
   const row = btn.closest('.pitcherRow');
-  const lambda = parseFloat(row.dataset.lambda);
-  const line = parseFloat(row.querySelector('.lineInput').value);
-  const overOdds = parseFloat(row.querySelector('.overInput').value);
-  const underOdds = parseFloat(row.querySelector('.underInput').value);
-  const out = row.querySelector('.edgeOut');
+  const lambda = parseFloat(row.dataset[kind]);
+  const wrap = btn.closest('.edgeRow');
+  const line = parseFloat(wrap.querySelector('.lineInput').value);
+  const overOdds = parseFloat(wrap.querySelector('.overInput').value);
+  const underOdds = parseFloat(wrap.querySelector('.underInput').value);
+  const out = wrap.querySelector('.edgeOut');
   if(isNaN(lambda) || isNaN(line)){{ out.textContent = 'Enter a line first.'; return; }}
   const threshold = Math.floor(line);
   const pUnder = poissonCDF(threshold, lambda);
@@ -275,10 +489,53 @@ function calcEdge(btn){{
 
 GAME_TEMPLATE = """<div class="gameGroup">
   <div class="gameHead"><span>{away} @ {home}</span><span>{time}</span></div>
+  {team_run_rows}
   {pitcher_rows}
 </div>"""
 
-PITCHER_ROW = """<div class="pitcherRow" data-lambda="{lam}">
+TEAM_RUN_ROW = """<div class="pitcherRow" data-runs_lambda="{lam}">
+  <div class="pTop">
+    <div>
+      <div class="pName">{team} — Total Runs</div>
+      <div class="pMeta">vs {opp} · L5 runs: {l5_str} · season {season_rpg}/gm · pitching-adj ×{run_factor}</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">{lam}</div>
+      <div class="pProjSub">{lo}–{hi} range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Runs (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'runs_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>"""
+
+TEAM_HIT_ROW = """<div class="pitcherRow" data-hits_lambda="{lam}">
+  <div class="pTop">
+    <div>
+      <div class="pName">{team} — Total Hits</div>
+      <div class="pMeta">vs {opp} · L5 hits: {l5_str} · season {season_hpg}/gm · pitching-adj ×{hit_factor}</div>
+    </div>
+    <div class="pProj">
+      <div class="pProjNum">{lam}</div>
+      <div class="pProjSub">{lo}–{hi} range</div>
+    </div>
+  </div>
+  <div class="propLabel">Team Total Hits (full game)</div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'hits_lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+</div>"""
+
+PITCHER_ROW = """<div class="pitcherRow" data-lambda="{lam}" data-outs_lambda="{outs_lam}">
   <div class="pTop">
     <div>
       <div class="pName">{name}</div>
@@ -289,11 +546,20 @@ PITCHER_ROW = """<div class="pitcherRow" data-lambda="{lam}">
       <div class="pProjSub">{lo}–{hi} range · {proj_ip} IP</div>
     </div>
   </div>
+  <div class="propLabel">Strikeouts</div>
   <div class="edgeRow">
     <input type="number" step="0.5" class="lineInput" placeholder="Line">
     <input type="number" step="0.01" class="overInput" placeholder="Over odds">
     <input type="number" step="0.01" class="underInput" placeholder="Under odds">
-    <button class="edgeBtn" onclick="calcEdge(this)">Edge</button>
+    <button class="edgeBtn" onclick="calcEdge(this, 'lambda')">Edge</button>
+    <div class="edgeOut"></div>
+  </div>
+  <div class="propLabel">Outs Recorded <span class="pProjSub">(proj {outs_lam} · {outs_lo}–{outs_hi} range)</span></div>
+  <div class="edgeRow">
+    <input type="number" step="0.5" class="lineInput" placeholder="Line">
+    <input type="number" step="0.01" class="overInput" placeholder="Over odds">
+    <input type="number" step="0.01" class="underInput" placeholder="Under odds">
+    <button class="edgeBtn" onclick="calcEdge(this, 'outs_lambda')">Edge</button>
     <div class="edgeOut"></div>
   </div>
 </div>"""
@@ -317,9 +583,29 @@ def render_html(slate, target_date):
                     l5_str=p["l5_str"], l5_delta=delta,
                     bb9=p["bb9"] if p["bb9"] is not None else "—",
                     lam=p["lambda"], lo=p["lo"], hi=p["hi"], proj_ip=p["proj_ip"],
+                    outs_lam=p["outs_lambda"], outs_lo=p["outs_lo"], outs_hi=p["outs_hi"],
                 ))
+
+        team_rows = []
+        for side_name in ("away", "home"):
+            tr = g.get("team_runs", {}).get(side_name)
+            if tr and "lambda" in tr:
+                team_rows.append(TEAM_RUN_ROW.format(
+                    team=tr["team"], opp=tr["opp"], l5_str=tr["l5_str"],
+                    season_rpg=tr["season_rpg"], run_factor=tr["run_factor"],
+                    lam=tr["lambda"], lo=tr["lo"], hi=tr["hi"],
+                ))
+            th = g.get("team_hits", {}).get(side_name)
+            if th and "lambda" in th:
+                team_rows.append(TEAM_HIT_ROW.format(
+                    team=th["team"], opp=th["opp"], l5_str=th["l5_str"],
+                    season_hpg=th["season_hpg"], hit_factor=th["hit_factor"],
+                    lam=th["lambda"], lo=th["lo"], hi=th["hi"],
+                ))
+
         games_html.append(GAME_TEMPLATE.format(
-            away=g["away"], home=g["home"], time=g["time"], pitcher_rows="".join(rows)
+            away=g["away"], home=g["home"], time=g["time"],
+            team_run_rows="".join(team_rows), pitcher_rows="".join(rows)
         ))
     return HTML_TEMPLATE.format(
         date=target_date.isoformat(), generated=datetime.now().strftime("%Y-%m-%d %H:%M"),
