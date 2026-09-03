@@ -25,6 +25,11 @@
   .edgeBtn{background:var(--green); color:#04140a; border:none; border-radius:6px; padding:6px 12px; font-size:12px; font-weight:700; cursor:pointer;}
   .edgeOut{font-size:12px; font-weight:700; color:var(--sub); flex-basis:100%;}
   .propLabel{font-size:11px; color:var(--sub); text-transform:uppercase; letter-spacing:.04em; margin-top:4px;}
+  .edgeBadge{display:inline-block; font-size:10px; font-weight:800; letter-spacing:.03em; padding:2px 7px; border-radius:5px; margin-right:4px;}
+  .badge-skip{background:#232b35; color:var(--sub);}
+  .badge-lean{background:#2a2a12; color:var(--yellow);}
+  .badge-play{background:var(--green-dim, #16321f); color:var(--green);}
+  .badge-verify{background:#3a1a1a; color:var(--red, #ef4444);}
   .topBar{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;}
   .downloadBtn{background:var(--panel2); border:1px solid var(--border); color:var(--text); font-size:13px; font-weight:600; padding:8px 14px; border-radius:8px; cursor:pointer;}
   .downloadBtn:active{opacity:.8;}
@@ -33,7 +38,7 @@
 <div class="topBar">
   <div>
     <h1>⚾ Strike Zone — Daily Slate</h1>
-    <div class="sub">2026-09-03 · generated 2026-09-03 04:58</div>
+    <div class="sub">2026-09-03 · generated 2026-09-03 05:17</div>
   </div>
   <button class="downloadBtn" onclick="exportCSV()">⬇ Download CSV</button>
 </div>
@@ -1111,14 +1116,14 @@
 </div>
 </div><div class="gameGroup">
   <div class="gameHead"><span>St. Louis Cardinals @ Los Angeles Dodgers</span><span>3:10 AM BST</span></div>
-  <div class="pitcherRow" data-runs_lambda="3.56">
+  <div class="pitcherRow" data-runs_lambda="3.75">
   <div class="pTop">
     <div>
       <div class="pName">St. Louis Cardinals — Total Runs</div>
-      <div class="pMeta">vs Los Angeles Dodgers · L5 runs: 4·2·4·13·5 · season 4.49/gm · pitching-adj ×0.78</div>
+      <div class="pMeta">vs Los Angeles Dodgers · L5 runs: 4·2·4·13·8 · season 4.51/gm · pitching-adj ×0.78</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">3.56</div>
+      <div class="pProjNum">3.75</div>
       <div class="pProjSub">1–6 range</div>
     </div>
   </div>
@@ -1130,15 +1135,15 @@
     <button class="edgeBtn" data-kind="runs_lambda" onclick="calcEdge(this)">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-hits_lambda="6.78">
+</div><div class="pitcherRow" data-hits_lambda="7.31">
   <div class="pTop">
     <div>
       <div class="pName">St. Louis Cardinals — Total Hits</div>
-      <div class="pMeta">vs Los Angeles Dodgers · L5 hits: 8·3·9·13·7 · season 8.1/gm · pitching-adj ×0.83</div>
+      <div class="pMeta">vs Los Angeles Dodgers · L5 hits: 8·3·9·13·9 · season 8.12/gm · pitching-adj ×0.83</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">6.78</div>
-      <div class="pProjSub">4–10 range</div>
+      <div class="pProjNum">7.31</div>
+      <div class="pProjSub">4–11 range</div>
     </div>
   </div>
   <div class="propLabel">Team Total Hits (full game)</div>
@@ -1149,14 +1154,14 @@
     <button class="edgeBtn" data-kind="hits_lambda" onclick="calcEdge(this)">Edge</button>
     <div class="edgeOut"></div>
   </div>
-</div><div class="pitcherRow" data-runs_lambda="5.81">
+</div><div class="pitcherRow" data-runs_lambda="6.17">
   <div class="pTop">
     <div>
       <div class="pName">Los Angeles Dodgers — Total Runs</div>
-      <div class="pMeta">vs St. Louis Cardinals · L5 runs: 2·1·6·8·5 · season 4.91/gm · pitching-adj ×1.17</div>
+      <div class="pMeta">vs St. Louis Cardinals · L5 runs: 2·1·6·8·6 · season 4.92/gm · pitching-adj ×1.17</div>
     </div>
     <div class="pProj">
-      <div class="pProjNum">5.81</div>
+      <div class="pProjNum">6.17</div>
       <div class="pProjSub">3–9 range</div>
     </div>
   </div>
@@ -1252,6 +1257,18 @@ function poissonCDF(threshold, lambda){
   for(let i=1;i<=threshold;i++){ p = p*lambda/i; cum += p; }
   return cum;
 }
+function classifyEdge(kind, bestEdge){
+  // Pitcher props (K, outs) get more benefit of the doubt than whole-team
+  // props (runs, hits) — a whole-lineup stat has more blind spots, so it
+  // needs a bigger edge to earn the same confidence label.
+  const isTeamProp = (kind === 'runs_lambda' || kind === 'hits_lambda');
+  const t = isTeamProp ? {skip:8, lean:15, play:25} : {skip:5, lean:12, play:20};
+  if(bestEdge < t.skip)  return {label:'SKIP',    cls:'badge-skip'};
+  if(bestEdge < t.lean)  return {label:'LEAN',    cls:'badge-lean'};
+  if(bestEdge < t.play)  return {label:'PLAY',    cls:'badge-play'};
+  return {label:'⚠ VERIFY', cls:'badge-verify'};
+}
+
 function calcEdge(btn){
   const kind = btn.dataset.kind;
   const row = btn.closest('.pitcherRow');
@@ -1261,26 +1278,30 @@ function calcEdge(btn){
   const overOdds = parseFloat(wrap.querySelector('.overInput').value);
   const underOdds = parseFloat(wrap.querySelector('.underInput').value);
   const out = wrap.querySelector('.edgeOut');
-  if(isNaN(lambda) || isNaN(line)){ out.textContent = 'Enter a line first.'; return; }
+  if(isNaN(lambda) || isNaN(line)){ out.textContent = 'Enter a line first.'; out.innerHTML = out.textContent; return; }
   const threshold = Math.floor(line);
   const pUnder = poissonCDF(threshold, lambda);
   const pOver = 1 - pUnder;
   let text = `Model: Over ${(pOver*100).toFixed(1)}% · Under ${(pUnder*100).toFixed(1)}%`;
+  let badgeHtml = '';
   if(!isNaN(overOdds) && !isNaN(underOdds) && overOdds>0 && underOdds>0){
     const rawOver = 1/overOdds, rawUnder = 1/underOdds;
     const overround = rawOver + rawUnder;
     const mktOver = rawOver/overround, mktUnder = rawUnder/overround;
     const edgeOver = (pOver - mktOver)*100;
     const edgeUnder = (pUnder - mktUnder)*100;
+    const bestEdge = Math.max(edgeOver, edgeUnder);
     const pick = edgeOver >= edgeUnder
       ? `Over edge ${edgeOver>=0?'+':''}${edgeOver.toFixed(1)}%`
       : `Under edge ${edgeUnder>=0?'+':''}${edgeUnder.toFixed(1)}%`;
     text += ` · ${pick}`;
-    out.style.color = Math.max(edgeOver, edgeUnder) >= 8 ? 'var(--green)' : (Math.max(edgeOver, edgeUnder) >= 3 ? 'var(--yellow)' : 'var(--sub)');
+    const {label, cls} = classifyEdge(kind, bestEdge);
+    badgeHtml = `<span class="edgeBadge ${cls}">${label}</span> `;
+    out.style.color = bestEdge >= 8 ? 'var(--green)' : (bestEdge >= 3 ? 'var(--yellow)' : 'var(--sub)');
   } else {
     out.style.color = 'var(--sub)';
   }
-  out.textContent = text;
+  out.innerHTML = badgeHtml + text.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 }
 
 function csvEscape(v){
@@ -1288,7 +1309,7 @@ function csvEscape(v){
 }
 
 function exportCSV(){
-  const header = ['Date','Matchup','GameTime','PlayerOrTeam','PropType','ProjectedMean','Line','OverOdds','UnderOdds','ModelResult','ActualResult','HitOrMiss'];
+  const header = ['Date','Matchup','GameTime','PlayerOrTeam','PropType','ProjectedMean','Line','OverOdds','UnderOdds','EdgeLabel','ModelResult','ActualResult','HitOrMiss'];
   const rows = [header];
   document.querySelectorAll('.gameGroup').forEach(game => {
     const spans = game.querySelectorAll('.gameHead span');
@@ -1307,8 +1328,10 @@ function exportCSV(){
         const overOdds = er.querySelector('.overInput').value;
         const underOdds = er.querySelector('.underInput').value;
         const modelResultEl = er.querySelector('.edgeOut');
-        const modelResult = modelResultEl ? modelResultEl.textContent.trim() : '';
-        rows.push([REPORT_DATE, matchup, gameTime, name, propLabel, lam, line, overOdds, underOdds, modelResult, '', '']);
+        const badgeEl = modelResultEl ? modelResultEl.querySelector('.edgeBadge') : null;
+        const edgeLabel = badgeEl ? badgeEl.textContent.trim() : '';
+        const modelResult = modelResultEl ? modelResultEl.textContent.replace(edgeLabel, '').trim() : '';
+        rows.push([REPORT_DATE, matchup, gameTime, name, propLabel, lam, line, overOdds, underOdds, edgeLabel, modelResult, '', '']);
       });
     });
   });

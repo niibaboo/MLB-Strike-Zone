@@ -795,21 +795,21 @@
       "away": {
         "team": "St. Louis Cardinals",
         "opp": "Los Angeles Dodgers",
-        "lambda": 3.56,
+        "lambda": 3.75,
         "lo": 1,
         "hi": 6,
-        "l5_str": "4\u00b72\u00b74\u00b713\u00b75",
-        "season_rpg": 4.49,
+        "l5_str": "4\u00b72\u00b74\u00b713\u00b78",
+        "season_rpg": 4.51,
         "run_factor": 0.78
       },
       "home": {
         "team": "Los Angeles Dodgers",
         "opp": "St. Louis Cardinals",
-        "lambda": 5.81,
+        "lambda": 6.17,
         "lo": 3,
         "hi": 9,
-        "l5_str": "2\u00b71\u00b76\u00b78\u00b75",
-        "season_rpg": 4.91,
+        "l5_str": "2\u00b71\u00b76\u00b78\u00b76",
+        "season_rpg": 4.92,
         "run_factor": 1.17
       }
     },
@@ -817,11 +817,11 @@
       "away": {
         "team": "St. Louis Cardinals",
         "opp": "Los Angeles Dodgers",
-        "lambda": 6.78,
+        "lambda": 7.31,
         "lo": 4,
-        "hi": 10,
-        "l5_str": "8\u00b73\u00b79\u00b713\u00b77",
-        "season_hpg": 8.1,
+        "hi": 11,
+        "l5_str": "8\u00b73\u00b79\u00b713\u00b79",
+        "season_hpg": 8.12,
         "hit_factor": 0.83
       },
       "home": {
