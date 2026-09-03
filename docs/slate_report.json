@@ -2,7 +2,7 @@
   {
     "away": "San Francisco Giants",
     "home": "Pittsburgh Pirates",
-    "time": "04:35 PM UTC",
+    "time": "5:35 PM BST",
     "pitchers": [
       {
         "side": "away",
@@ -95,7 +95,7 @@
   {
     "away": "Toronto Blue Jays",
     "home": "Cleveland Guardians",
-    "time": "05:10 PM UTC",
+    "time": "6:10 PM BST",
     "pitchers": [
       {
         "side": "away",
@@ -188,7 +188,7 @@
   {
     "away": "Chicago White Sox",
     "home": "Houston Astros",
-    "time": "06:10 PM UTC",
+    "time": "7:10 PM BST",
     "pitchers": [
       {
         "side": "away",
@@ -281,7 +281,7 @@
   {
     "away": "Boston Red Sox",
     "home": "Baltimore Orioles",
-    "time": "11:15 PM UTC",
+    "time": "12:15 AM BST",
     "pitchers": [
       {
         "side": "away",
@@ -374,7 +374,7 @@
   {
     "away": "Milwaukee Brewers",
     "home": "Chicago Cubs",
-    "time": "11:15 PM UTC",
+    "time": "12:15 AM BST",
     "pitchers": [
       {
         "side": "away",
@@ -467,7 +467,7 @@
   {
     "away": "Miami Marlins",
     "home": "Kansas City Royals",
-    "time": "11:40 PM UTC",
+    "time": "12:40 AM BST",
     "pitchers": [
       {
         "side": "away",
@@ -560,7 +560,7 @@
   {
     "away": "Tampa Bay Rays",
     "home": "Texas Rangers",
-    "time": "12:05 AM UTC",
+    "time": "1:05 AM BST",
     "pitchers": [
       {
         "side": "away",
@@ -653,7 +653,7 @@
   {
     "away": "Athletics",
     "home": "Seattle Mariners",
-    "time": "01:40 AM UTC",
+    "time": "2:40 AM BST",
     "pitchers": [
       {
         "side": "away",
@@ -746,7 +746,7 @@
   {
     "away": "St. Louis Cardinals",
     "home": "Los Angeles Dodgers",
-    "time": "02:10 AM UTC",
+    "time": "3:10 AM BST",
     "pitchers": [
       {
         "side": "away",
@@ -817,10 +817,10 @@
       "away": {
         "team": "St. Louis Cardinals",
         "opp": "Los Angeles Dodgers",
-        "lambda": 6.59,
-        "lo": 3,
+        "lambda": 6.78,
+        "lo": 4,
         "hi": 10,
-        "l5_str": "8\u00b73\u00b79\u00b713\u00b76",
+        "l5_str": "8\u00b73\u00b79\u00b713\u00b77",
         "season_hpg": 8.1,
         "hit_factor": 0.83
       },
