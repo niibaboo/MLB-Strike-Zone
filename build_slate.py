@@ -19,7 +19,10 @@ import sys
 import math
 import json
 from datetime import date, datetime
+from zoneinfo import ZoneInfo
 import requests
+
+UK_TZ = ZoneInfo("Europe/London")
 
 BASE = "https://statsapi.mlb.com/api/v1"
 LEAGUE_AVG_K_PCT = 22.1
@@ -367,7 +370,9 @@ def build_slate(target_date):
         away, home = g["teams"]["away"], g["teams"]["home"]
         game_time = g.get("gameDate", "")
         try:
-            t = datetime.fromisoformat(game_time.replace("Z", "+00:00")).strftime("%I:%M %p UTC")
+            utc_dt = datetime.fromisoformat(game_time.replace("Z", "+00:00"))
+            uk_dt = utc_dt.astimezone(UK_TZ)
+            t = uk_dt.strftime("%I:%M %p").lstrip("0") + f" {uk_dt.tzname()}"
         except Exception:
             t = ""
         entry = {"away": away["team"]["name"], "home": home["team"]["name"], "time": t, "pitchers": []}
