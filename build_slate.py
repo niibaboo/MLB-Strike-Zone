@@ -470,6 +470,11 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   .edgeBtn{{background:var(--green); color:#04140a; border:none; border-radius:6px; padding:6px 12px; font-size:12px; font-weight:700; cursor:pointer;}}
   .edgeOut{{font-size:12px; font-weight:700; color:var(--sub); flex-basis:100%;}}
   .propLabel{{font-size:11px; color:var(--sub); text-transform:uppercase; letter-spacing:.04em; margin-top:4px;}}
+  .edgeBadge{{display:inline-block; font-size:10px; font-weight:800; letter-spacing:.03em; padding:2px 7px; border-radius:5px; margin-right:4px;}}
+  .badge-skip{{background:#232b35; color:var(--sub);}}
+  .badge-lean{{background:#2a2a12; color:var(--yellow);}}
+  .badge-play{{background:var(--green-dim, #16321f); color:var(--green);}}
+  .badge-verify{{background:#3a1a1a; color:var(--red, #ef4444);}}
   .topBar{{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;}}
   .downloadBtn{{background:var(--panel2); border:1px solid var(--border); color:var(--text); font-size:13px; font-weight:600; padding:8px 14px; border-radius:8px; cursor:pointer;}}
   .downloadBtn:active{{opacity:.8;}}
@@ -491,6 +496,18 @@ function poissonCDF(threshold, lambda){{
   for(let i=1;i<=threshold;i++){{ p = p*lambda/i; cum += p; }}
   return cum;
 }}
+function classifyEdge(kind, bestEdge){{
+  // Pitcher props (K, outs) get more benefit of the doubt than whole-team
+  // props (runs, hits) — a whole-lineup stat has more blind spots, so it
+  // needs a bigger edge to earn the same confidence label.
+  const isTeamProp = (kind === 'runs_lambda' || kind === 'hits_lambda');
+  const t = isTeamProp ? {{skip:8, lean:15, play:25}} : {{skip:5, lean:12, play:20}};
+  if(bestEdge < t.skip)  return {{label:'SKIP',    cls:'badge-skip'}};
+  if(bestEdge < t.lean)  return {{label:'LEAN',    cls:'badge-lean'}};
+  if(bestEdge < t.play)  return {{label:'PLAY',    cls:'badge-play'}};
+  return {{label:'⚠ VERIFY', cls:'badge-verify'}};
+}}
+
 function calcEdge(btn){{
   const kind = btn.dataset.kind;
   const row = btn.closest('.pitcherRow');
@@ -500,26 +517,30 @@ function calcEdge(btn){{
   const overOdds = parseFloat(wrap.querySelector('.overInput').value);
   const underOdds = parseFloat(wrap.querySelector('.underInput').value);
   const out = wrap.querySelector('.edgeOut');
-  if(isNaN(lambda) || isNaN(line)){{ out.textContent = 'Enter a line first.'; return; }}
+  if(isNaN(lambda) || isNaN(line)){{ out.textContent = 'Enter a line first.'; out.innerHTML = out.textContent; return; }}
   const threshold = Math.floor(line);
   const pUnder = poissonCDF(threshold, lambda);
   const pOver = 1 - pUnder;
   let text = `Model: Over ${{(pOver*100).toFixed(1)}}% · Under ${{(pUnder*100).toFixed(1)}}%`;
+  let badgeHtml = '';
   if(!isNaN(overOdds) && !isNaN(underOdds) && overOdds>0 && underOdds>0){{
     const rawOver = 1/overOdds, rawUnder = 1/underOdds;
     const overround = rawOver + rawUnder;
     const mktOver = rawOver/overround, mktUnder = rawUnder/overround;
     const edgeOver = (pOver - mktOver)*100;
     const edgeUnder = (pUnder - mktUnder)*100;
+    const bestEdge = Math.max(edgeOver, edgeUnder);
     const pick = edgeOver >= edgeUnder
       ? `Over edge ${{edgeOver>=0?'+':''}}${{edgeOver.toFixed(1)}}%`
       : `Under edge ${{edgeUnder>=0?'+':''}}${{edgeUnder.toFixed(1)}}%`;
     text += ` · ${{pick}}`;
-    out.style.color = Math.max(edgeOver, edgeUnder) >= 8 ? 'var(--green)' : (Math.max(edgeOver, edgeUnder) >= 3 ? 'var(--yellow)' : 'var(--sub)');
+    const {{label, cls}} = classifyEdge(kind, bestEdge);
+    badgeHtml = `<span class="edgeBadge ${{cls}}">${{label}}</span> `;
+    out.style.color = bestEdge >= 8 ? 'var(--green)' : (bestEdge >= 3 ? 'var(--yellow)' : 'var(--sub)');
   }} else {{
     out.style.color = 'var(--sub)';
   }}
-  out.textContent = text;
+  out.innerHTML = badgeHtml + text.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 }}
 
 function csvEscape(v){{
@@ -527,7 +548,7 @@ function csvEscape(v){{
 }}
 
 function exportCSV(){{
-  const header = ['Date','Matchup','GameTime','PlayerOrTeam','PropType','ProjectedMean','Line','OverOdds','UnderOdds','ModelResult','ActualResult','HitOrMiss'];
+  const header = ['Date','Matchup','GameTime','PlayerOrTeam','PropType','ProjectedMean','Line','OverOdds','UnderOdds','EdgeLabel','ModelResult','ActualResult','HitOrMiss'];
   const rows = [header];
   document.querySelectorAll('.gameGroup').forEach(game => {{
     const spans = game.querySelectorAll('.gameHead span');
@@ -546,8 +567,10 @@ function exportCSV(){{
         const overOdds = er.querySelector('.overInput').value;
         const underOdds = er.querySelector('.underInput').value;
         const modelResultEl = er.querySelector('.edgeOut');
-        const modelResult = modelResultEl ? modelResultEl.textContent.trim() : '';
-        rows.push([REPORT_DATE, matchup, gameTime, name, propLabel, lam, line, overOdds, underOdds, modelResult, '', '']);
+        const badgeEl = modelResultEl ? modelResultEl.querySelector('.edgeBadge') : null;
+        const edgeLabel = badgeEl ? badgeEl.textContent.trim() : '';
+        const modelResult = modelResultEl ? modelResultEl.textContent.replace(edgeLabel, '').trim() : '';
+        rows.push([REPORT_DATE, matchup, gameTime, name, propLabel, lam, line, overOdds, underOdds, edgeLabel, modelResult, '', '']);
       }});
     }});
   }});
