@@ -46,6 +46,26 @@ def poisson_pmf(k, lam):
     return math.exp(-lam) * (lam ** k) / math.factorial(k)
 
 
+def winsorize_iqr(values, cap_multiplier=1.5):
+    """Caps any single game at 1.5x the median of the last-5 sample before
+    recency-weighting. Built for team runs/hits, where a single blowout game
+    (e.g. a 12-run outburst) can otherwise dominate a small-sample weighted
+    average and produce a wildly overconfident projection.
+
+    (Note: an IQR/Tukey-fence approach was tried first but turned out too
+    loose on a 5-value sample to reliably catch real outliers — a median
+    cap is simpler and more predictable at this sample size.)
+    Only the high end is capped, since a big scoring game is the case that
+    actually distorts these projections; a shutout (0) is a normal, bounded
+    outcome that doesn't need correcting the same way.
+    """
+    if len(values) < 3:
+        return list(values)
+    med = sorted(values)[len(values) // 2]
+    cap = med * cap_multiplier
+    return [min(v, cap) for v in values]
+
+
 def get_season(season_year):
     return season_year
 
@@ -162,8 +182,9 @@ def project_team_runs(team_id, season, opp_starter_era, starter_proj_ip, opp_tea
     last5_runs = get_team_runs_last5(team_id, season)
     if len(last5_runs) >= 2:
         n = len(last5_runs)
+        clipped_runs = winsorize_iqr(last5_runs)
         wts = [1.4 ** i for i in range(n)]
-        recent_rpg = sum(w * r for w, r in zip(wts, last5_runs)) / sum(wts)
+        recent_rpg = sum(w * r for w, r in zip(wts, clipped_runs)) / sum(wts)
     else:
         recent_rpg = season_rpg
 
@@ -208,8 +229,9 @@ def project_team_hits(team_id, season, opp_starter_hits9, starter_proj_ip, opp_t
     last5_hits = get_team_hits_last5(team_id, season)
     if len(last5_hits) >= 2:
         n = len(last5_hits)
+        clipped_hits = winsorize_iqr(last5_hits)
         wts = [1.4 ** i for i in range(n)]
-        recent_hpg = sum(w * h for w, h in zip(wts, last5_hits)) / sum(wts)
+        recent_hpg = sum(w * h for w, h in zip(wts, clipped_hits)) / sum(wts)
     else:
         recent_hpg = season_hpg
 
