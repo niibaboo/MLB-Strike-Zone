@@ -1013,7 +1013,24 @@
     "pitchers": [
       {
         "side": "away",
-        "name": null
+        "name": "Cal Quantrill",
+        "team": "Texas Rangers",
+        "opp": "Seattle Mariners",
+        "opp_kpct": 23.4,
+        "lambda": 5.75,
+        "lo": 3,
+        "hi": 9,
+        "proj_ip": 6.2,
+        "outs_lambda": 18.6,
+        "outs_lo": 13,
+        "outs_hi": 24,
+        "season_era": "2.79",
+        "season_k9": "6.80",
+        "season_hits9": "7.36",
+        "bb9": 2.23,
+        "whip": "1.07",
+        "l5_str": "6\u00b75\u00b76\u00b78\u00b75",
+        "l5_vs_season": 25.0
       },
       {
         "side": "home",
@@ -1034,12 +1051,12 @@
       "home": {
         "team": "Seattle Mariners",
         "opp": "Texas Rangers",
-        "lambda": 3.66,
+        "lambda": 2.89,
         "lo": 1,
-        "hi": 6,
+        "hi": 5,
         "l5_str": "8\u00b74\u00b76\u00b72\u00b72",
         "season_rpg": 3.95,
-        "run_factor": 1.03
+        "run_factor": 0.81
       }
     },
     "team_hits": {
@@ -1056,12 +1073,12 @@
       "home": {
         "team": "Seattle Mariners",
         "opp": "Texas Rangers",
-        "lambda": 7.92,
+        "lambda": 7.18,
         "lo": 4,
-        "hi": 12,
+        "hi": 11,
         "l5_str": "12\u00b79\u00b710\u00b76\u00b77",
         "season_hpg": 7.59,
-        "hit_factor": 1.01
+        "hit_factor": 0.91
       }
     }
   },
