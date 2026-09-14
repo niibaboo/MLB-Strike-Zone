@@ -1,1396 +1,931 @@
 [
   {
-    "away": "Colorado Rockies",
-    "home": "Detroit Tigers",
-    "time": "5:10 PM BST",
+    "away": "Los Angeles Dodgers",
+    "home": "Cincinnati Reds",
+    "time": "11:40 PM BST",
     "pitchers": [
       {
         "side": "away",
-        "name": "Gabriel Hughes",
-        "team": "Colorado Rockies",
-        "opp": "Detroit Tigers",
-        "opp_kpct": 22.9,
-        "lambda": 3.88,
-        "lo": 1,
-        "hi": 6,
-        "proj_ip": 4.3,
-        "outs_lambda": 12.81,
-        "outs_lo": 8,
-        "outs_hi": 17,
-        "season_era": "6.37",
-        "season_k9": "7.58",
-        "season_hits9": "9.56",
-        "bb9": 3.49,
-        "whip": "1.45",
-        "l5_str": "2\u00b73\u00b74\u00b76\u00b72",
-        "l5_vs_season": 6.0
-      },
-      {
-        "side": "home",
-        "name": "Jackson Jobe",
-        "team": "Detroit Tigers",
-        "opp": "Colorado Rockies",
-        "opp_kpct": 23.0,
-        "lambda": 5.43,
-        "lo": 3,
-        "hi": 8,
-        "proj_ip": 5.1,
-        "outs_lambda": 15.2,
-        "outs_lo": 10,
-        "outs_hi": 20,
-        "season_era": "3.97",
-        "season_k9": "8.47",
-        "season_hits9": "7.94",
-        "bb9": 3.44,
-        "whip": "1.26",
-        "l5_str": "3\u00b74\u00b74\u00b77\u00b77",
-        "l5_vs_season": 15.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Colorado Rockies",
-        "opp": "Detroit Tigers",
-        "lambda": 2.77,
-        "lo": 1,
-        "hi": 5,
-        "l5_str": "1\u00b73\u00b72\u00b77\u00b71",
-        "season_rpg": 4.67,
-        "run_factor": 0.96
-      },
-      "home": {
-        "team": "Detroit Tigers",
-        "opp": "Colorado Rockies",
-        "lambda": 9.68,
-        "lo": 6,
-        "hi": 14,
-        "l5_str": "2\u00b77\u00b76\u00b711\u00b78",
-        "season_rpg": 4.47,
-        "run_factor": 1.49
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Colorado Rockies",
-        "opp": "Detroit Tigers",
-        "lambda": 7.0,
-        "lo": 4,
-        "hi": 10,
-        "l5_str": "5\u00b78\u00b710\u00b712\u00b72",
-        "season_hpg": 8.56,
-        "hit_factor": 0.93
-      },
-      "home": {
-        "team": "Detroit Tigers",
-        "opp": "Colorado Rockies",
-        "lambda": 8.89,
-        "lo": 5,
-        "hi": 13,
-        "l5_str": "5\u00b77\u00b75\u00b718\u00b77",
-        "season_hpg": 8.05,
-        "hit_factor": 1.17
-      }
-    }
-  },
-  {
-    "away": "Los Angeles Angels",
-    "home": "Washington Nationals",
-    "time": "6:35 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Grayson Rodriguez",
-        "team": "Los Angeles Angels",
-        "opp": "Washington Nationals",
-        "opp_kpct": 21.8,
-        "lambda": 4.15,
-        "lo": 2,
-        "hi": 7,
-        "proj_ip": 4.4,
-        "outs_lambda": 13.33,
-        "outs_lo": 9,
-        "outs_hi": 18,
-        "season_era": "6.21",
-        "season_k9": "8.27",
-        "season_hits9": "10.13",
-        "bb9": 4.14,
-        "whip": "1.58",
-        "l5_str": "6\u00b74\u00b77\u00b73\u00b71",
-        "l5_vs_season": 4.0
-      },
-      {
-        "side": "home",
-        "name": "Riley Cornelio",
-        "team": "Washington Nationals",
-        "opp": "Los Angeles Angels",
-        "opp_kpct": 25.3,
-        "lambda": 2.75,
-        "lo": 1,
-        "hi": 5,
-        "proj_ip": 1.7,
-        "outs_lambda": 5.2,
-        "outs_lo": 2,
-        "outs_hi": 8,
-        "season_era": "5.06",
-        "season_k9": "9.79",
-        "season_hits9": "7.09",
-        "bb9": 7.43,
-        "whip": "1.61",
-        "l5_str": "4\u00b72",
-        "l5_vs_season": 42.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Los Angeles Angels",
-        "opp": "Washington Nationals",
-        "lambda": 4.11,
-        "lo": 2,
-        "hi": 7,
-        "l5_str": "6\u00b76\u00b73\u00b75\u00b70",
-        "season_rpg": 4.02,
-        "run_factor": 1.2
-      },
-      "home": {
-        "team": "Washington Nationals",
-        "opp": "Los Angeles Angels",
-        "lambda": 4.69,
-        "lo": 2,
-        "hi": 8,
-        "l5_str": "4\u00b72\u00b74\u00b76\u00b70",
-        "season_rpg": 5.07,
-        "run_factor": 1.3
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Los Angeles Angels",
-        "opp": "Washington Nationals",
-        "lambda": 4.9,
-        "lo": 2,
-        "hi": 8,
-        "l5_str": "15\u00b712\u00b74\u00b74\u00b71",
-        "season_hpg": 7.77,
-        "hit_factor": 1.0
-      },
-      "home": {
-        "team": "Washington Nationals",
-        "opp": "Los Angeles Angels",
-        "lambda": 6.68,
-        "lo": 4,
-        "hi": 10,
-        "l5_str": "7\u00b74\u00b76\u00b711\u00b72",
-        "season_hpg": 8.38,
-        "hit_factor": 1.06
-      }
-    }
-  },
-  {
-    "away": "Philadelphia Phillies",
-    "home": "Atlanta Braves",
-    "time": "6:35 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Andrew Painter",
-        "team": "Philadelphia Phillies",
-        "opp": "Atlanta Braves",
-        "opp_kpct": 21.6,
-        "lambda": 4.97,
-        "lo": 2,
-        "hi": 8,
-        "proj_ip": 5.2,
-        "outs_lambda": 15.53,
-        "outs_lo": 11,
-        "outs_hi": 21,
-        "season_era": "5.74",
-        "season_k9": "7.92",
-        "season_hits9": "9.70",
-        "bb9": 3.15,
-        "whip": "1.43",
-        "l5_str": "8\u00b76\u00b76\u00b76\u00b71",
-        "l5_vs_season": 18.0
-      },
-      {
-        "side": "home",
-        "name": "Grant Holmes",
-        "team": "Atlanta Braves",
-        "opp": "Philadelphia Phillies",
-        "opp_kpct": 22.1,
-        "lambda": 2.86,
-        "lo": 1,
-        "hi": 5,
-        "proj_ip": 4.2,
-        "outs_lambda": 12.73,
-        "outs_lo": 8,
-        "outs_hi": 17,
-        "season_era": "3.42",
-        "season_k9": "7.11",
-        "season_hits9": "7.88",
-        "bb9": 3.68,
-        "whip": "1.28",
-        "l5_str": "3\u00b73\u00b71\u00b76\u00b70",
-        "l5_vs_season": -22.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Philadelphia Phillies",
-        "opp": "Atlanta Braves",
-        "lambda": 2.17,
-        "lo": 1,
-        "hi": 4,
-        "l5_str": "11\u00b71\u00b75\u00b72\u00b70",
-        "season_rpg": 4.44,
-        "run_factor": 0.87
-      },
-      "home": {
-        "team": "Atlanta Braves",
-        "opp": "Philadelphia Phillies",
-        "lambda": 4.33,
-        "lo": 2,
-        "hi": 7,
-        "l5_str": "2\u00b73\u00b76\u00b712\u00b71",
-        "season_rpg": 4.6,
-        "run_factor": 1.25
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Philadelphia Phillies",
-        "opp": "Atlanta Braves",
-        "lambda": 5.62,
-        "lo": 3,
-        "hi": 9,
-        "l5_str": "12\u00b73\u00b77\u00b77\u00b72",
-        "season_hpg": 8.04,
-        "hit_factor": 0.92
-      },
-      "home": {
-        "team": "Atlanta Braves",
-        "opp": "Philadelphia Phillies",
-        "lambda": 7.87,
+        "name": "Tarik Skubal",
+        "team": "Los Angeles Dodgers",
+        "opp": "Cincinnati Reds",
+        "opp_kpct": 25.4,
+        "lambda": 7.91,
         "lo": 4,
         "hi": 12,
-        "l5_str": "3\u00b77\u00b711\u00b713\u00b73",
-        "season_hpg": 8.29,
-        "hit_factor": 1.08
-      }
-    }
-  },
-  {
-    "away": "New York Mets",
-    "home": "New York Yankees",
-    "time": "6:35 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Christian Scott",
-        "team": "New York Mets",
-        "opp": "New York Yankees",
-        "opp_kpct": 24.6,
-        "lambda": 6.13,
-        "lo": 3,
-        "hi": 9,
-        "proj_ip": 4.9,
-        "outs_lambda": 14.55,
-        "outs_lo": 10,
-        "outs_hi": 20,
-        "season_era": "3.81",
-        "season_k9": "10.87",
-        "season_hits9": "7.61",
-        "bb9": 3.99,
-        "whip": "1.29",
-        "l5_str": "6\u00b77\u00b76\u00b72\u00b77",
-        "l5_vs_season": -9.0
-      },
-      {
-        "side": "home",
-        "name": "Cam Schlittler",
-        "team": "New York Yankees",
-        "opp": "New York Mets",
-        "opp_kpct": 22.4,
-        "lambda": 6.92,
-        "lo": 4,
-        "hi": 10,
-        "proj_ip": 5.4,
-        "outs_lambda": 16.2,
-        "outs_lo": 11,
-        "outs_hi": 21,
-        "season_era": "2.01",
-        "season_k9": "11.09",
-        "season_hits9": "6.12",
-        "bb9": 2.11,
-        "whip": "0.91",
-        "l5_str": "4\u00b78\u00b79\u00b710\u00b71",
-        "l5_vs_season": 4.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "New York Mets",
-        "opp": "New York Yankees",
-        "lambda": 3.12,
-        "lo": 1,
-        "hi": 5,
-        "l5_str": "7\u00b715\u00b74\u00b712\u00b70",
-        "season_rpg": 4.32,
-        "run_factor": 0.63
-      },
-      "home": {
-        "team": "New York Yankees",
-        "opp": "New York Mets",
-        "lambda": 3.7,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "6\u00b710\u00b76\u00b72\u00b70",
-        "season_rpg": 4.53,
-        "run_factor": 1.0
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "New York Mets",
-        "opp": "New York Yankees",
-        "lambda": 5.52,
-        "lo": 3,
-        "hi": 9,
-        "l5_str": "8\u00b715\u00b77\u00b714\u00b70",
-        "season_hpg": 8.0,
-        "hit_factor": 0.78
-      },
-      "home": {
-        "team": "New York Yankees",
-        "opp": "New York Mets",
-        "lambda": 5.91,
-        "lo": 3,
-        "hi": 9,
-        "l5_str": "7\u00b711\u00b713\u00b77\u00b70",
-        "season_hpg": 7.72,
-        "hit_factor": 0.93
-      }
-    }
-  },
-  {
-    "away": "Baltimore Orioles",
-    "home": "Toronto Blue Jays",
-    "time": "6:37 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Trevor Rogers",
-        "team": "Baltimore Orioles",
-        "opp": "Toronto Blue Jays",
-        "opp_kpct": 19.2,
-        "lambda": 4.74,
-        "lo": 2,
-        "hi": 8,
-        "proj_ip": 5.3,
-        "outs_lambda": 16.0,
-        "outs_lo": 11,
-        "outs_hi": 21,
-        "season_era": "4.14",
-        "season_k9": "8.17",
-        "season_hits9": "8.70",
-        "bb9": 2.19,
-        "whip": "1.21",
-        "l5_str": "6\u00b77\u00b711\u00b76\u00b70",
-        "l5_vs_season": 19.0
-      },
-      {
-        "side": "home",
-        "name": "Dylan Cease",
-        "team": "Toronto Blue Jays",
-        "opp": "Baltimore Orioles",
-        "opp_kpct": 24.6,
-        "lambda": 6.98,
-        "lo": 4,
-        "hi": 10,
-        "proj_ip": 4.8,
-        "outs_lambda": 14.43,
-        "outs_lo": 10,
-        "outs_hi": 19,
-        "season_era": "2.38",
-        "season_k9": "12.75",
-        "season_hits9": "5.66",
-        "bb9": 3.83,
-        "whip": "1.05",
-        "l5_str": "8\u00b78\u00b74\u00b76\u00b73",
-        "l5_vs_season": -13.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Baltimore Orioles",
-        "opp": "Toronto Blue Jays",
-        "lambda": 2.93,
-        "lo": 1,
-        "hi": 5,
-        "l5_str": "5\u00b79\u00b77\u00b73\u00b70",
-        "season_rpg": 4.47,
-        "run_factor": 0.77
-      },
-      "home": {
-        "team": "Toronto Blue Jays",
-        "opp": "Baltimore Orioles",
-        "lambda": 3.2,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "4\u00b70\u00b74\u00b77\u00b70",
-        "season_rpg": 4.0,
-        "run_factor": 1.04
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Baltimore Orioles",
-        "opp": "Toronto Blue Jays",
-        "lambda": 4.81,
-        "lo": 2,
-        "hi": 8,
-        "l5_str": "6\u00b710\u00b711\u00b76\u00b71",
-        "season_hpg": 7.76,
-        "hit_factor": 0.79
-      },
-      "home": {
-        "team": "Toronto Blue Jays",
-        "opp": "Baltimore Orioles",
-        "lambda": 7.45,
-        "lo": 4,
-        "hi": 11,
-        "l5_str": "11\u00b76\u00b710\u00b711\u00b71",
-        "season_hpg": 8.34,
-        "hit_factor": 1.03
-      }
-    }
-  },
-  {
-    "away": "Houston Astros",
-    "home": "Tampa Bay Rays",
-    "time": "6:40 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Hayden Wesneski",
-        "team": "Houston Astros",
-        "opp": "Tampa Bay Rays",
-        "opp_kpct": 18.4,
-        "lambda": 3.26,
-        "lo": 1,
-        "hi": 6,
-        "proj_ip": 4.8,
-        "outs_lambda": 14.4,
-        "outs_lo": 10,
-        "outs_hi": 19,
-        "season_era": "3.88",
-        "season_k9": "7.19",
-        "season_hits9": "6.99",
-        "bb9": 2.72,
-        "whip": "1.08",
-        "l5_str": "4\u00b76\u00b75\u00b73\u00b72",
-        "l5_vs_season": 4.0
-      },
-      {
-        "side": "home",
-        "name": "Freddy Peralta",
-        "team": "Tampa Bay Rays",
-        "opp": "Houston Astros",
-        "opp_kpct": 21.8,
-        "lambda": 4.08,
-        "lo": 2,
-        "hi": 7,
-        "proj_ip": 5.2,
-        "outs_lambda": 15.5,
-        "outs_lo": 11,
-        "outs_hi": 21,
-        "season_era": "4.79",
-        "season_k9": "8.36",
-        "season_hits9": "8.94",
-        "bb9": 3.21,
-        "whip": "1.35",
-        "l5_str": "6\u00b74\u00b77\u00b72\u00b71",
-        "l5_vs_season": -21.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Houston Astros",
-        "opp": "Tampa Bay Rays",
-        "lambda": 2.55,
-        "lo": 1,
-        "hi": 5,
-        "l5_str": "7\u00b72\u00b71\u00b72\u00b70",
-        "season_rpg": 4.43,
-        "run_factor": 1.09
-      },
-      "home": {
-        "team": "Tampa Bay Rays",
-        "opp": "Houston Astros",
-        "lambda": 3.6,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "7\u00b71\u00b73\u00b73\u00b73",
-        "season_rpg": 4.5,
-        "run_factor": 1.04
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Houston Astros",
-        "opp": "Tampa Bay Rays",
-        "lambda": 6.01,
-        "lo": 3,
-        "hi": 9,
-        "l5_str": "12\u00b78\u00b79\u00b75\u00b70",
-        "season_hpg": 8.03,
-        "hit_factor": 0.99
-      },
-      "home": {
-        "team": "Tampa Bay Rays",
-        "opp": "Houston Astros",
-        "lambda": 5.44,
-        "lo": 3,
-        "hi": 9,
-        "l5_str": "10\u00b75\u00b74\u00b77\u00b73",
-        "season_hpg": 8.68,
-        "hit_factor": 0.88
-      }
-    }
-  },
-  {
-    "away": "Los Angeles Dodgers",
-    "home": "Miami Marlins",
-    "time": "6:40 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Emmet Sheehan",
-        "team": "Los Angeles Dodgers",
-        "opp": "Miami Marlins",
-        "opp_kpct": 21.8,
-        "lambda": 5.42,
-        "lo": 3,
-        "hi": 8,
-        "proj_ip": 3.9,
-        "outs_lambda": 11.8,
-        "outs_lo": 8,
-        "outs_hi": 16,
-        "season_era": "5.03",
-        "season_k9": "10.59",
-        "season_hits9": "8.47",
-        "bb9": 2.74,
-        "whip": "1.25",
-        "l5_str": "6\u00b75\u00b74\u00b710\u00b72",
-        "l5_vs_season": 29.0
-      },
-      {
-        "side": "home",
-        "name": "Eury P\u00e9rez",
-        "team": "Miami Marlins",
-        "opp": "Los Angeles Dodgers",
-        "opp_kpct": 20.6,
-        "lambda": 3.31,
-        "lo": 1,
-        "hi": 6,
-        "proj_ip": 3.6,
-        "outs_lambda": 10.66,
-        "outs_lo": 7,
-        "outs_hi": 15,
-        "season_era": "3.89",
-        "season_k9": "9.64",
-        "season_hits9": "7.09",
-        "bb9": 4.02,
-        "whip": "1.23",
-        "l5_str": "4\u00b75\u00b73\u00b75\u00b71",
-        "l5_vs_season": -10.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Los Angeles Dodgers",
-        "opp": "Miami Marlins",
-        "lambda": 3.31,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "3\u00b714\u00b76\u00b73\u00b70",
-        "season_rpg": 4.95,
-        "run_factor": 1.0
-      },
-      "home": {
-        "team": "Miami Marlins",
-        "opp": "Los Angeles Dodgers",
-        "lambda": 3.42,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "5\u00b714\u00b72\u00b74\u00b70",
-        "season_rpg": 4.4,
-        "run_factor": 1.06
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Los Angeles Dodgers",
-        "opp": "Miami Marlins",
-        "lambda": 5.24,
-        "lo": 2,
-        "hi": 8,
-        "l5_str": "7\u00b714\u00b78\u00b74\u00b70",
-        "season_hpg": 8.54,
-        "hit_factor": 0.89
-      },
-      "home": {
-        "team": "Miami Marlins",
-        "opp": "Los Angeles Dodgers",
-        "lambda": 6.48,
-        "lo": 3,
-        "hi": 10,
-        "l5_str": "10\u00b720\u00b710\u00b77\u00b70",
-        "season_hpg": 8.24,
-        "hit_factor": 0.92
-      }
-    }
-  },
-  {
-    "away": "Cleveland Guardians",
-    "home": "Minnesota Twins",
-    "time": "7:10 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Tanner Bibee",
-        "team": "Cleveland Guardians",
-        "opp": "Minnesota Twins",
-        "opp_kpct": 21.0,
-        "lambda": 3.55,
-        "lo": 1,
-        "hi": 6,
-        "proj_ip": 5.3,
-        "outs_lambda": 15.8,
-        "outs_lo": 11,
-        "outs_hi": 21,
-        "season_era": "4.22",
-        "season_k9": "7.01",
-        "season_hits9": "8.02",
-        "bb9": 2.74,
-        "whip": "1.20",
-        "l5_str": "3\u00b76\u00b75\u00b74\u00b71",
+        "proj_ip": 6.4,
+        "outs_lambda": 19.33,
+        "outs_lo": 14,
+        "outs_hi": 25,
+        "season_era": "2.84",
+        "season_k9": "10.57",
+        "season_hits9": "7.22",
+        "bb9": 1.55,
+        "whip": "0.97",
+        "l5_str": "7\u00b711\u00b77\u00b76\u00b75",
         "l5_vs_season": -14.0
       },
       {
         "side": "home",
-        "name": "Joe Ryan",
-        "team": "Minnesota Twins",
-        "opp": "Cleveland Guardians",
-        "opp_kpct": 21.3,
-        "lambda": 5.07,
-        "lo": 2,
-        "hi": 8,
-        "proj_ip": 5.1,
-        "outs_lambda": 15.21,
-        "outs_lo": 10,
-        "outs_hi": 20,
-        "season_era": "3.68",
-        "season_k9": "10.06",
-        "season_hits9": "8.26",
-        "bb9": 1.94,
-        "whip": "1.13",
-        "l5_str": "6\u00b73\u00b74\u00b73\u00b77",
-        "l5_vs_season": -11.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Cleveland Guardians",
-        "opp": "Minnesota Twins",
-        "lambda": 4.48,
+        "name": "Nick Lodolo",
+        "team": "Cincinnati Reds",
+        "opp": "Los Angeles Dodgers",
+        "opp_kpct": 20.5,
+        "lambda": 3.9,
         "lo": 2,
         "hi": 7,
-        "l5_str": "4\u00b79\u00b75\u00b75\u00b73",
-        "season_rpg": 4.07,
-        "run_factor": 1.03
-      },
-      "home": {
-        "team": "Minnesota Twins",
-        "opp": "Cleveland Guardians",
-        "lambda": 3.61,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "4\u00b73\u00b72\u00b72\u00b74",
-        "season_rpg": 4.6,
-        "run_factor": 1.01
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Cleveland Guardians",
-        "opp": "Minnesota Twins",
-        "lambda": 7.55,
-        "lo": 4,
-        "hi": 11,
-        "l5_str": "9\u00b712\u00b79\u00b77\u00b75",
-        "season_hpg": 7.87,
-        "hit_factor": 0.99
-      },
-      "home": {
-        "team": "Minnesota Twins",
-        "opp": "Cleveland Guardians",
-        "lambda": 6.54,
-        "lo": 3,
-        "hi": 10,
-        "l5_str": "8\u00b75\u00b75\u00b76\u00b77",
-        "season_hpg": 8.22,
-        "hit_factor": 0.94
-      }
-    }
-  },
-  {
-    "away": "Cincinnati Reds",
-    "home": "Milwaukee Brewers",
-    "time": "7:10 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Chase Burns",
-        "team": "Cincinnati Reds",
-        "opp": "Milwaukee Brewers",
-        "opp_kpct": 21.5,
-        "lambda": 6.26,
-        "lo": 3,
-        "hi": 10,
-        "proj_ip": 4.9,
-        "outs_lambda": 14.56,
-        "outs_lo": 10,
-        "outs_hi": 20,
-        "season_era": "2.73",
-        "season_k9": "10.68",
-        "season_hits9": "7.16",
-        "bb9": 3.09,
-        "whip": "1.14",
-        "l5_str": "8\u00b78\u00b75\u00b77\u00b75",
-        "l5_vs_season": 18.0
-      },
-      {
-        "side": "home",
-        "name": "Robert Gasser",
-        "team": "Milwaukee Brewers",
-        "opp": "Cincinnati Reds",
-        "opp_kpct": 25.5,
-        "lambda": 5.39,
-        "lo": 3,
-        "hi": 8,
-        "proj_ip": 4.7,
-        "outs_lambda": 14.2,
+        "proj_ip": 4.5,
+        "outs_lambda": 13.46,
         "outs_lo": 9,
-        "outs_hi": 19,
-        "season_era": "4.43",
-        "season_k9": "8.57",
-        "season_hits9": "8.67",
-        "bb9": 2.86,
-        "whip": "1.28",
-        "l5_str": "3\u00b77\u00b74\u00b74\u00b75",
-        "l5_vs_season": 6.0
+        "outs_hi": 18,
+        "season_era": "5.12",
+        "season_k9": "7.53",
+        "season_hits9": "9.94",
+        "bb9": 3.81,
+        "whip": "1.53",
+        "l5_str": "2\u00b72\u00b75\u00b75\u00b76",
+        "l5_vs_season": 18.0
       }
     ],
     "team_runs": {
       "away": {
-        "team": "Cincinnati Reds",
-        "opp": "Milwaukee Brewers",
-        "lambda": 2.62,
-        "lo": 1,
-        "hi": 5,
-        "l5_str": "3\u00b72\u00b71\u00b70\u00b79",
-        "season_rpg": 4.19,
-        "run_factor": 1.0
+        "team": "Los Angeles Dodgers",
+        "opp": "Cincinnati Reds",
+        "lambda": 5.65,
+        "lo": 3,
+        "hi": 9,
+        "l5_str": "3\u00b714\u00b76\u00b73\u00b74",
+        "season_rpg": 4.97,
+        "run_factor": 1.25
       },
       "home": {
-        "team": "Milwaukee Brewers",
-        "opp": "Cincinnati Reds",
-        "lambda": 7.45,
-        "lo": 4,
-        "hi": 11,
-        "l5_str": "4\u00b74\u00b78\u00b720\u00b713",
-        "season_rpg": 5.2,
-        "run_factor": 0.93
+        "team": "Cincinnati Reds",
+        "opp": "Los Angeles Dodgers",
+        "lambda": 2.19,
+        "lo": 1,
+        "hi": 4,
+        "l5_str": "2\u00b71\u00b70\u00b79\u00b74",
+        "season_rpg": 4.19,
+        "run_factor": 0.77
       }
     },
     "team_hits": {
       "away": {
-        "team": "Cincinnati Reds",
-        "opp": "Milwaukee Brewers",
-        "lambda": 6.26,
-        "lo": 3,
-        "hi": 10,
-        "l5_str": "7\u00b75\u00b76\u00b72\u00b714",
-        "season_hpg": 7.66,
-        "hit_factor": 0.95
+        "team": "Los Angeles Dodgers",
+        "opp": "Cincinnati Reds",
+        "lambda": 8.9,
+        "lo": 5,
+        "hi": 13,
+        "l5_str": "7\u00b714\u00b78\u00b74\u00b79",
+        "season_hpg": 8.6,
+        "hit_factor": 1.1
       },
       "home": {
-        "team": "Milwaukee Brewers",
-        "opp": "Cincinnati Reds",
-        "lambda": 10.85,
-        "lo": 7,
-        "hi": 15,
-        "l5_str": "6\u00b712\u00b79\u00b723\u00b714",
-        "season_hpg": 8.84,
-        "hit_factor": 0.93
+        "team": "Cincinnati Reds",
+        "opp": "Los Angeles Dodgers",
+        "lambda": 5.98,
+        "lo": 3,
+        "hi": 9,
+        "l5_str": "5\u00b76\u00b72\u00b714\u00b78",
+        "season_hpg": 7.66,
+        "hit_factor": 0.85
       }
     }
   },
   {
     "away": "Chicago White Sox",
-    "home": "St. Louis Cardinals",
-    "time": "7:15 PM BST",
+    "home": "Cleveland Guardians",
+    "time": "11:40 PM BST",
     "pitchers": [
       {
         "side": "away",
-        "name": "David Sandlin",
+        "name": "Sean Newcomb",
         "team": "Chicago White Sox",
-        "opp": "St. Louis Cardinals",
-        "opp_kpct": 20.7,
-        "lambda": 4.47,
-        "lo": 2,
-        "hi": 7,
-        "proj_ip": 5.1,
-        "outs_lambda": 15.34,
-        "outs_lo": 10,
-        "outs_hi": 20,
-        "season_era": "6.93",
-        "season_k9": "8.76",
-        "season_hits9": "8.03",
-        "bb9": 4.38,
-        "whip": "1.38",
-        "l5_str": "4\u00b74\u00b76",
-        "l5_vs_season": -6.0
+        "opp": "Cleveland Guardians",
+        "opp_kpct": 21.2,
+        "lambda": 2.47,
+        "lo": 1,
+        "hi": 5,
+        "proj_ip": 1.9,
+        "outs_lambda": 5.77,
+        "outs_lo": 3,
+        "outs_hi": 9,
+        "season_era": "2.77",
+        "season_k9": "8.32",
+        "season_hits9": "7.04",
+        "bb9": 3.2,
+        "whip": "1.14",
+        "l5_str": "4\u00b72\u00b70\u00b73\u00b74",
+        "l5_vs_season": 69.0
       },
       {
         "side": "home",
-        "name": "Michael McGreevy",
-        "team": "St. Louis Cardinals",
+        "name": "Gavin Williams",
+        "team": "Cleveland Guardians",
         "opp": "Chicago White Sox",
-        "opp_kpct": 24.0,
-        "lambda": 4.24,
+        "opp_kpct": 24.1,
+        "lambda": 8.78,
+        "lo": 5,
+        "hi": 13,
+        "proj_ip": 4.9,
+        "outs_lambda": 14.6,
+        "outs_lo": 10,
+        "outs_hi": 20,
+        "season_era": "3.78",
+        "season_k9": "12.14",
+        "season_hits9": "7.03",
+        "bb9": 2.82,
+        "whip": "1.09",
+        "l5_str": "5\u00b711\u00b73\u00b713\u00b711",
+        "l5_vs_season": 35.0
+      }
+    ],
+    "team_runs": {
+      "away": {
+        "team": "Chicago White Sox",
+        "opp": "Cleveland Guardians",
+        "lambda": 2.66,
+        "lo": 1,
+        "hi": 5,
+        "l5_str": "2\u00b70\u00b73\u00b76\u00b71",
+        "season_rpg": 4.66,
+        "run_factor": 0.95
+      },
+      "home": {
+        "team": "Cleveland Guardians",
+        "opp": "Chicago White Sox",
+        "lambda": 4.88,
         "lo": 2,
-        "hi": 7,
+        "hi": 8,
+        "l5_str": "9\u00b75\u00b75\u00b73\u00b79",
+        "season_rpg": 4.1,
+        "run_factor": 0.96
+      }
+    },
+    "team_hits": {
+      "away": {
+        "team": "Chicago White Sox",
+        "opp": "Cleveland Guardians",
+        "lambda": 5.57,
+        "lo": 3,
+        "hi": 9,
+        "l5_str": "8\u00b72\u00b79\u00b76\u00b74",
+        "season_hpg": 7.86,
+        "hit_factor": 0.88
+      },
+      "home": {
+        "team": "Cleveland Guardians",
+        "opp": "Chicago White Sox",
+        "lambda": 8.36,
+        "lo": 5,
+        "hi": 12,
+        "l5_str": "12\u00b79\u00b77\u00b75\u00b714",
+        "season_hpg": 7.91,
+        "hit_factor": 0.93
+      }
+    }
+  },
+  {
+    "away": "Detroit Tigers",
+    "home": "Toronto Blue Jays",
+    "time": "12:07 AM BST",
+    "pitchers": [
+      {
+        "side": "away",
+        "name": "Troy Melton",
+        "team": "Detroit Tigers",
+        "opp": "Toronto Blue Jays",
+        "opp_kpct": 19.2,
+        "lambda": 3.33,
+        "lo": 1,
+        "hi": 6,
         "proj_ip": 5.6,
         "outs_lambda": 16.8,
         "outs_lo": 12,
         "outs_hi": 22,
-        "season_era": "3.92",
-        "season_k9": "6.19",
-        "season_hits9": "8.82",
-        "bb9": 2.45,
-        "whip": "1.25",
-        "l5_str": "6\u00b74\u00b73\u00b74\u00b74",
-        "l5_vs_season": 2.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Chicago White Sox",
-        "opp": "St. Louis Cardinals",
-        "lambda": 3.56,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "3\u00b72\u00b70\u00b73\u00b76",
-        "season_rpg": 4.69,
-        "run_factor": 1.02
-      },
-      "home": {
-        "team": "St. Louis Cardinals",
-        "opp": "Chicago White Sox",
-        "lambda": 7.02,
-        "lo": 4,
-        "hi": 10,
-        "l5_str": "4\u00b71\u00b76\u00b77\u00b75",
-        "season_rpg": 4.56,
-        "run_factor": 1.43
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Chicago White Sox",
-        "opp": "St. Louis Cardinals",
-        "lambda": 7.07,
-        "lo": 4,
-        "hi": 11,
-        "l5_str": "6\u00b78\u00b72\u00b79\u00b76",
-        "season_hpg": 7.89,
-        "hit_factor": 1.03
-      },
-      "home": {
-        "team": "St. Louis Cardinals",
-        "opp": "Chicago White Sox",
-        "lambda": 8.15,
-        "lo": 5,
-        "hi": 12,
-        "l5_str": "9\u00b75\u00b78\u00b713\u00b78",
-        "season_hpg": 8.24,
-        "hit_factor": 0.95
-      }
-    }
-  },
-  {
-    "away": "Pittsburgh Pirates",
-    "home": "Chicago Cubs",
-    "time": "7:20 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Bubba Chandler",
-        "team": "Pittsburgh Pirates",
-        "opp": "Chicago Cubs",
-        "opp_kpct": 21.3,
-        "lambda": 4.7,
-        "lo": 2,
-        "hi": 8,
-        "proj_ip": 4.9,
-        "outs_lambda": 14.71,
-        "outs_lo": 10,
-        "outs_hi": 20,
-        "season_era": "4.25",
-        "season_k9": "8.18",
-        "season_hits9": "7.54",
-        "bb9": 4.5,
-        "whip": "1.34",
-        "l5_str": "5\u00b76\u00b73\u00b74\u00b78",
-        "l5_vs_season": 15.0
+        "season_era": "2.42",
+        "season_k9": "7.25",
+        "season_hits9": "6.92",
+        "bb9": 2.5,
+        "whip": "1.05",
+        "l5_str": "4\u00b73\u00b74\u00b74\u00b73",
+        "l5_vs_season": -23.0
       },
       {
         "side": "home",
-        "name": "Matthew Boyd",
-        "team": "Chicago Cubs",
-        "opp": "Pittsburgh Pirates",
-        "opp_kpct": 24.0,
-        "lambda": 4.98,
-        "lo": 2,
-        "hi": 8,
-        "proj_ip": 5.9,
-        "outs_lambda": 17.8,
-        "outs_lo": 13,
-        "outs_hi": 23,
-        "season_era": "4.03",
-        "season_k9": "7.08",
-        "season_hits9": "8.23",
-        "bb9": 2.72,
-        "whip": "1.22",
-        "l5_str": "2\u00b73\u00b75\u00b73\u00b77",
-        "l5_vs_season": -3.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Pittsburgh Pirates",
-        "opp": "Chicago Cubs",
-        "lambda": 3.59,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "9\u00b74\u00b72\u00b72\u00b73",
-        "season_rpg": 4.79,
-        "run_factor": 1.02
-      },
-      "home": {
-        "team": "Chicago Cubs",
-        "opp": "Pittsburgh Pirates",
-        "lambda": 5.15,
-        "lo": 2,
-        "hi": 8,
-        "l5_str": "3\u00b73\u00b76\u00b712\u00b74",
-        "season_rpg": 5.34,
-        "run_factor": 1.05
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Pittsburgh Pirates",
-        "opp": "Chicago Cubs",
-        "lambda": 7.6,
-        "lo": 4,
-        "hi": 11,
-        "l5_str": "18\u00b710\u00b77\u00b77\u00b76",
-        "season_hpg": 8.68,
-        "hit_factor": 0.97
-      },
-      "home": {
-        "team": "Chicago Cubs",
-        "opp": "Pittsburgh Pirates",
-        "lambda": 6.54,
-        "lo": 3,
-        "hi": 10,
-        "l5_str": "6\u00b77\u00b75\u00b716\u00b75",
-        "season_hpg": 8.64,
-        "hit_factor": 0.91
-      }
-    }
-  },
-  {
-    "away": "Kansas City Royals",
-    "home": "Boston Red Sox",
-    "time": "8:05 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Noah Cameron",
-        "team": "Kansas City Royals",
-        "opp": "Boston Red Sox",
-        "opp_kpct": 21.4,
-        "lambda": 5.7,
-        "lo": 3,
-        "hi": 9,
-        "proj_ip": 6.2,
-        "outs_lambda": 18.6,
-        "outs_lo": 13,
-        "outs_hi": 24,
-        "season_era": "3.93",
-        "season_k9": "8.14",
-        "season_hits9": "7.97",
-        "bb9": 2.86,
-        "whip": "1.20",
-        "l5_str": "8\u00b72\u00b73\u00b77\u00b77",
-        "l5_vs_season": 8.0
-      },
-      {
-        "side": "home",
-        "name": "Payton Tolle",
-        "team": "Boston Red Sox",
-        "opp": "Kansas City Royals",
-        "opp_kpct": 20.7,
-        "lambda": 7.35,
-        "lo": 4,
-        "hi": 11,
-        "proj_ip": 6.0,
-        "outs_lambda": 18.0,
-        "outs_lo": 13,
-        "outs_hi": 24,
-        "season_era": "3.15",
-        "season_k9": "10.45",
-        "season_hits9": "7.29",
-        "bb9": 2.43,
-        "whip": "1.08",
-        "l5_str": "4\u00b76\u00b77\u00b76\u00b712",
-        "l5_vs_season": 19.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Kansas City Royals",
-        "opp": "Boston Red Sox",
-        "lambda": 2.65,
-        "lo": 1,
-        "hi": 5,
-        "l5_str": "4\u00b73\u00b75\u00b73\u00b71",
-        "season_rpg": 4.25,
-        "run_factor": 0.82
-      },
-      "home": {
-        "team": "Boston Red Sox",
-        "opp": "Kansas City Royals",
-        "lambda": 4.0,
+        "name": "Jos\u00e9 Soriano",
+        "team": "Toronto Blue Jays",
+        "opp": "Detroit Tigers",
+        "opp_kpct": 22.9,
+        "lambda": 4.31,
         "lo": 2,
         "hi": 7,
-        "l5_str": "5\u00b71\u00b74\u00b72\u00b75",
-        "season_rpg": 4.42,
+        "proj_ip": 5.7,
+        "outs_lambda": 17.11,
+        "outs_lo": 12,
+        "outs_hi": 23,
+        "season_era": "3.48",
+        "season_k9": "8.50",
+        "season_hits9": "7.62",
+        "bb9": 3.92,
+        "whip": "1.28",
+        "l5_str": "2\u00b77\u00b76\u00b72\u00b73",
+        "l5_vs_season": -35.0
+      }
+    ],
+    "team_runs": {
+      "away": {
+        "team": "Detroit Tigers",
+        "opp": "Toronto Blue Jays",
+        "lambda": 5.9,
+        "lo": 3,
+        "hi": 9,
+        "l5_str": "2\u00b77\u00b76\u00b711\u00b78",
+        "season_rpg": 4.47,
+        "run_factor": 0.91
+      },
+      "home": {
+        "team": "Toronto Blue Jays",
+        "opp": "Detroit Tigers",
+        "lambda": 3.22,
+        "lo": 1,
+        "hi": 6,
+        "l5_str": "4\u00b70\u00b74\u00b77\u00b78",
+        "season_rpg": 4.05,
+        "run_factor": 0.72
+      }
+    },
+    "team_hits": {
+      "away": {
+        "team": "Detroit Tigers",
+        "opp": "Toronto Blue Jays",
+        "lambda": 7.12,
+        "lo": 4,
+        "hi": 11,
+        "l5_str": "5\u00b77\u00b75\u00b718\u00b78",
+        "season_hpg": 8.06,
+        "hit_factor": 0.91
+      },
+      "home": {
+        "team": "Toronto Blue Jays",
+        "opp": "Detroit Tigers",
+        "lambda": 7.97,
+        "lo": 4,
+        "hi": 12,
+        "l5_str": "11\u00b76\u00b710\u00b711\u00b710",
+        "season_hpg": 8.4,
+        "hit_factor": 0.85
+      }
+    }
+  },
+  {
+    "away": "Baltimore Orioles",
+    "home": "New York Mets",
+    "time": "12:10 AM BST",
+    "pitchers": [
+      {
+        "side": "away",
+        "name": "Brandon Young",
+        "team": "Baltimore Orioles",
+        "opp": "New York Mets",
+        "opp_kpct": 22.4,
+        "lambda": 4.08,
+        "lo": 2,
+        "hi": 7,
+        "proj_ip": 5.4,
+        "outs_lambda": 16.1,
+        "outs_lo": 11,
+        "outs_hi": 21,
+        "season_era": "3.71",
+        "season_k9": "7.17",
+        "season_hits9": "8.96",
+        "bb9": 3.2,
+        "whip": "1.35",
+        "l5_str": "3\u00b73\u00b74\u00b77\u00b72",
+        "l5_vs_season": -9.0
+      },
+      {
+        "side": "home",
+        "name": "Jonah Tong",
+        "team": "New York Mets",
+        "opp": "Baltimore Orioles",
+        "opp_kpct": 24.7,
+        "lambda": 14.79,
+        "lo": 10,
+        "hi": 20,
+        "proj_ip": 14.2,
+        "outs_lambda": 42.57,
+        "outs_lo": 34,
+        "outs_hi": 51,
+        "season_era": "4.80",
+        "season_k9": "8.40",
+        "season_hits9": "7.20",
+        "bb9": 4.8,
+        "whip": "1.33",
+        "l5_str": "7",
+        "l5_vs_season": 0.0
+      }
+    ],
+    "team_runs": {
+      "away": {
+        "team": "Baltimore Orioles",
+        "opp": "New York Mets",
+        "lambda": 4.82,
+        "lo": 2,
+        "hi": 8,
+        "l5_str": "5\u00b79\u00b77\u00b73\u00b71",
+        "season_rpg": 4.48,
+        "run_factor": 1.2
+      },
+      "home": {
+        "team": "New York Mets",
+        "opp": "Baltimore Orioles",
+        "lambda": 4.86,
+        "lo": 2,
+        "hi": 8,
+        "l5_str": "7\u00b715\u00b74\u00b712\u00b70",
+        "season_rpg": 4.32,
+        "run_factor": 0.98
+      }
+    },
+    "team_hits": {
+      "away": {
+        "team": "Baltimore Orioles",
+        "opp": "New York Mets",
+        "lambda": 6.97,
+        "lo": 4,
+        "hi": 10,
+        "l5_str": "6\u00b710\u00b711\u00b76\u00b79",
+        "season_hpg": 7.81,
+        "hit_factor": 0.85
+      },
+      "home": {
+        "team": "New York Mets",
+        "opp": "Baltimore Orioles",
+        "lambda": 8.09,
+        "lo": 5,
+        "hi": 12,
+        "l5_str": "8\u00b715\u00b77\u00b714\u00b73",
+        "season_hpg": 8.02,
+        "hit_factor": 1.05
+      }
+    }
+  },
+  {
+    "away": "Atlanta Braves",
+    "home": "Chicago Cubs",
+    "time": "12:40 AM BST",
+    "pitchers": [
+      {
+        "side": "away",
+        "name": "Reynaldo L\u00f3pez",
+        "team": "Atlanta Braves",
+        "opp": "Chicago Cubs",
+        "opp_kpct": 21.2,
+        "lambda": 4.66,
+        "lo": 2,
+        "hi": 8,
+        "proj_ip": 4.8,
+        "outs_lambda": 14.46,
+        "outs_lo": 10,
+        "outs_hi": 19,
+        "season_era": "4.13",
+        "season_k9": "8.37",
+        "season_hits9": "8.72",
+        "bb9": 3.77,
+        "whip": "1.39",
+        "l5_str": "5\u00b73\u00b76\u00b76\u00b75",
+        "l5_vs_season": 13.0
+      },
+      {
+        "side": "home",
+        "name": "David Peterson",
+        "team": "Chicago Cubs",
+        "opp": "Atlanta Braves",
+        "opp_kpct": 21.6,
+        "lambda": 4.69,
+        "lo": 2,
+        "hi": 8,
+        "proj_ip": 4.7,
+        "outs_lambda": 13.95,
+        "outs_lo": 9,
+        "outs_hi": 19,
+        "season_era": "5.28",
+        "season_k9": "8.02",
+        "season_hits9": "10.14",
+        "bb9": 4.04,
+        "whip": "1.58",
+        "l5_str": "6\u00b78\u00b76\u00b74\u00b74",
+        "l5_vs_season": 24.0
+      }
+    ],
+    "team_runs": {
+      "away": {
+        "team": "Atlanta Braves",
+        "opp": "Chicago Cubs",
+        "lambda": 5.44,
+        "lo": 3,
+        "hi": 9,
+        "l5_str": "2\u00b73\u00b76\u00b712\u00b74",
+        "season_rpg": 4.62,
+        "run_factor": 1.19
+      },
+      "home": {
+        "team": "Chicago Cubs",
+        "opp": "Atlanta Braves",
+        "lambda": 4.44,
+        "lo": 2,
+        "hi": 7,
+        "l5_str": "3\u00b76\u00b712\u00b74\u00b73",
+        "season_rpg": 5.33,
+        "run_factor": 0.97
+      }
+    },
+    "team_hits": {
+      "away": {
+        "team": "Atlanta Braves",
+        "opp": "Chicago Cubs",
+        "lambda": 10.71,
+        "lo": 7,
+        "hi": 15,
+        "l5_str": "3\u00b77\u00b711\u00b713\u00b712",
+        "season_hpg": 8.35,
+        "hit_factor": 1.09
+      },
+      "home": {
+        "team": "Chicago Cubs",
+        "opp": "Atlanta Braves",
+        "lambda": 6.53,
+        "lo": 3,
+        "hi": 10,
+        "l5_str": "7\u00b75\u00b716\u00b75\u00b75",
+        "season_hpg": 8.62,
+        "hit_factor": 0.98
+      }
+    }
+  },
+  {
+    "away": "New York Yankees",
+    "home": "Minnesota Twins",
+    "time": "12:40 AM BST",
+    "pitchers": [
+      {
+        "side": "away",
+        "name": "Will Warren",
+        "team": "New York Yankees",
+        "opp": "Minnesota Twins",
+        "opp_kpct": 21.1,
+        "lambda": 5.25,
+        "lo": 2,
+        "hi": 8,
+        "proj_ip": 5.2,
+        "outs_lambda": 15.55,
+        "outs_lo": 11,
+        "outs_hi": 21,
+        "season_era": "4.05",
+        "season_k9": "8.92",
+        "season_hits9": "9.17",
+        "bb9": 3.1,
+        "whip": "1.36",
+        "l5_str": "3\u00b75\u00b74\u00b77\u00b78",
+        "l5_vs_season": 11.0
+      },
+      {
+        "side": "home",
+        "name": "Dean Kremer",
+        "team": "Minnesota Twins",
+        "opp": "New York Yankees",
+        "opp_kpct": 24.6,
+        "lambda": 4.73,
+        "lo": 2,
+        "hi": 8,
+        "proj_ip": 4.7,
+        "outs_lambda": 14.14,
+        "outs_lo": 9,
+        "outs_hi": 19,
+        "season_era": "5.65",
+        "season_k9": "8.67",
+        "season_hits9": "8.54",
+        "bb9": 3.14,
+        "whip": "1.30",
+        "l5_str": "6\u00b75\u00b73\u00b75\u00b73",
+        "l5_vs_season": -10.0
+      }
+    ],
+    "team_runs": {
+      "away": {
+        "team": "New York Yankees",
+        "opp": "Minnesota Twins",
+        "lambda": 5.42,
+        "lo": 3,
+        "hi": 8,
+        "l5_str": "6\u00b710\u00b76\u00b72\u00b72",
+        "season_rpg": 4.54,
+        "run_factor": 1.3
+      },
+      "home": {
+        "team": "Minnesota Twins",
+        "opp": "New York Yankees",
+        "lambda": 2.9,
+        "lo": 1,
+        "hi": 5,
+        "l5_str": "3\u00b72\u00b72\u00b74\u00b72",
+        "season_rpg": 4.58,
+        "run_factor": 0.93
+      }
+    },
+    "team_hits": {
+      "away": {
+        "team": "New York Yankees",
+        "opp": "Minnesota Twins",
+        "lambda": 7.13,
+        "lo": 4,
+        "hi": 11,
+        "l5_str": "7\u00b711\u00b713\u00b77\u00b73",
+        "season_hpg": 7.74,
+        "hit_factor": 1.01
+      },
+      "home": {
+        "team": "Minnesota Twins",
+        "opp": "New York Yankees",
+        "lambda": 6.75,
+        "lo": 4,
+        "hi": 10,
+        "l5_str": "5\u00b75\u00b76\u00b77\u00b76",
+        "season_hpg": 8.21,
+        "hit_factor": 0.99
+      }
+    }
+  },
+  {
+    "away": "San Francisco Giants",
+    "home": "St. Louis Cardinals",
+    "time": "12:45 AM BST",
+    "pitchers": [
+      {
+        "side": "away",
+        "name": "Landen Roupp",
+        "team": "San Francisco Giants",
+        "opp": "St. Louis Cardinals",
+        "opp_kpct": 20.7,
+        "lambda": 3.29,
+        "lo": 1,
+        "hi": 6,
+        "proj_ip": 5.2,
+        "outs_lambda": 15.57,
+        "outs_lo": 11,
+        "outs_hi": 21,
+        "season_era": "4.00",
+        "season_k9": "8.30",
+        "season_hits9": "7.23",
+        "bb9": 4.3,
+        "whip": "1.28",
+        "l5_str": "5\u00b72\u00b73\u00b74\u00b72",
+        "l5_vs_season": -41.0
+      },
+      {
+        "side": "home",
+        "name": "Quinn Mathews",
+        "team": "St. Louis Cardinals",
+        "opp": "San Francisco Giants",
+        "opp_kpct": 21.4,
+        "lambda": 4.26,
+        "lo": 2,
+        "hi": 7,
+        "proj_ip": 5.0,
+        "outs_lambda": 14.89,
+        "outs_lo": 10,
+        "outs_hi": 20,
+        "season_era": "4.11",
+        "season_k9": "8.22",
+        "season_hits9": "9.39",
+        "bb9": 4.11,
+        "whip": "1.50",
+        "l5_str": "7\u00b73\u00b77\u00b74\u00b74",
+        "l5_vs_season": -5.0
+      }
+    ],
+    "team_runs": {
+      "away": {
+        "team": "San Francisco Giants",
+        "opp": "St. Louis Cardinals",
+        "lambda": 4.87,
+        "lo": 2,
+        "hi": 8,
+        "l5_str": "2\u00b77\u00b75\u00b76\u00b74",
+        "season_rpg": 4.21,
+        "run_factor": 1.05
+      },
+      "home": {
+        "team": "St. Louis Cardinals",
+        "opp": "San Francisco Giants",
+        "lambda": 4.64,
+        "lo": 2,
+        "hi": 7,
+        "l5_str": "1\u00b76\u00b77\u00b75\u00b73",
+        "season_rpg": 4.55,
         "run_factor": 1.04
       }
     },
     "team_hits": {
       "away": {
-        "team": "Kansas City Royals",
-        "opp": "Boston Red Sox",
-        "lambda": 6.74,
-        "lo": 4,
-        "hi": 10,
-        "l5_str": "8\u00b77\u00b77\u00b710\u00b75",
-        "season_hpg": 8.26,
-        "hit_factor": 0.89
-      },
-      "home": {
-        "team": "Boston Red Sox",
-        "opp": "Kansas City Royals",
-        "lambda": 8.05,
+        "team": "San Francisco Giants",
+        "opp": "St. Louis Cardinals",
+        "lambda": 8.72,
         "lo": 5,
-        "hi": 12,
-        "l5_str": "9\u00b74\u00b78\u00b78\u00b710",
-        "season_hpg": 8.33,
-        "hit_factor": 0.97
-      }
-    }
-  },
-  {
-    "away": "Seattle Mariners",
-    "home": "Athletics",
-    "time": "9:05 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Bryce Miller",
-        "team": "Seattle Mariners",
-        "opp": "Athletics",
-        "opp_kpct": 22.4,
-        "lambda": 4.87,
-        "lo": 2,
-        "hi": 8,
-        "proj_ip": 4.7,
-        "outs_lambda": 14.0,
-        "outs_lo": 9,
-        "outs_hi": 19,
-        "season_era": "4.22",
-        "season_k9": "8.88",
-        "season_hits9": "7.74",
-        "bb9": 2.55,
-        "whip": "1.14",
-        "l5_str": "5\u00b73\u00b75\u00b73\u00b76",
-        "l5_vs_season": 6.0
-      },
-      {
-        "side": "home",
-        "name": "Jacob Lopez",
-        "team": "Athletics",
-        "opp": "Seattle Mariners",
-        "opp_kpct": 23.2,
-        "lambda": 5.1,
-        "lo": 2,
-        "hi": 8,
-        "proj_ip": 5.6,
-        "outs_lambda": 16.72,
-        "outs_lo": 12,
-        "outs_hi": 22,
-        "season_era": "4.78",
-        "season_k9": "8.43",
-        "season_hits9": "8.76",
-        "bb9": 4.3,
-        "whip": "1.45",
-        "l5_str": "6\u00b79\u00b76\u00b77\u00b71",
-        "l5_vs_season": -11.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Seattle Mariners",
-        "opp": "Athletics",
-        "lambda": 6.22,
-        "lo": 3,
-        "hi": 9,
-        "l5_str": "5\u00b73\u00b74\u00b75\u00b719",
-        "season_rpg": 4.06,
-        "run_factor": 1.25
-      },
-      "home": {
-        "team": "Athletics",
-        "opp": "Seattle Mariners",
-        "lambda": 2.96,
-        "lo": 1,
-        "hi": 5,
-        "l5_str": "6\u00b72\u00b72\u00b76\u00b71",
-        "season_rpg": 4.35,
-        "run_factor": 1.05
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Seattle Mariners",
-        "opp": "Athletics",
-        "lambda": 9.46,
-        "lo": 6,
         "hi": 13,
-        "l5_str": "9\u00b76\u00b74\u00b710\u00b723",
-        "season_hpg": 7.68,
-        "hit_factor": 1.06
+        "l5_str": "6\u00b710\u00b76\u00b78\u00b79",
+        "season_hpg": 8.38,
+        "hit_factor": 1.07
       },
       "home": {
-        "team": "Athletics",
-        "opp": "Seattle Mariners",
-        "lambda": 6.55,
-        "lo": 3,
+        "team": "St. Louis Cardinals",
+        "opp": "San Francisco Giants",
+        "lambda": 6.8,
+        "lo": 4,
         "hi": 10,
-        "l5_str": "6\u00b76\u00b74\u00b714\u00b75",
-        "season_hpg": 8.33,
-        "hit_factor": 0.96
-      }
-    }
-  },
-  {
-    "away": "Texas Rangers",
-    "home": "Arizona Diamondbacks",
-    "time": "9:10 PM BST",
-    "pitchers": [
-      {
-        "side": "away",
-        "name": "Cal Quantrill",
-        "team": "Texas Rangers",
-        "opp": "Arizona Diamondbacks",
-        "opp_kpct": 19.3,
-        "lambda": 4.52,
-        "lo": 2,
-        "hi": 7,
-        "proj_ip": 6.4,
-        "outs_lambda": 19.2,
-        "outs_lo": 14,
-        "outs_hi": 25,
-        "season_era": "2.89",
-        "season_k9": "6.75",
-        "season_hits9": "7.36",
-        "bb9": 2.19,
-        "whip": "1.06",
-        "l5_str": "5\u00b76\u00b78\u00b75\u00b74",
-        "l5_vs_season": 12.0
-      },
-      {
-        "side": "home",
-        "name": "Eduardo Rodriguez",
-        "team": "Arizona Diamondbacks",
-        "opp": "Texas Rangers",
-        "opp_kpct": 22.8,
-        "lambda": 5.26,
-        "lo": 2,
-        "hi": 8,
-        "proj_ip": 5.9,
-        "outs_lambda": 17.8,
-        "outs_lo": 13,
-        "outs_hi": 23,
-        "season_era": "2.55",
-        "season_k9": "6.66",
-        "season_hits9": "7.86",
-        "bb9": 2.97,
-        "whip": "1.20",
-        "l5_str": "5\u00b74\u00b79\u00b73\u00b76",
-        "l5_vs_season": 25.0
-      }
-    ],
-    "team_runs": {
-      "away": {
-        "team": "Texas Rangers",
-        "opp": "Arizona Diamondbacks",
-        "lambda": 2.63,
-        "lo": 1,
-        "hi": 5,
-        "l5_str": "10\u00b72\u00b73\u00b71\u00b76",
-        "season_rpg": 4.14,
-        "run_factor": 0.77
-      },
-      "home": {
-        "team": "Arizona Diamondbacks",
-        "opp": "Texas Rangers",
-        "lambda": 3.44,
-        "lo": 1,
-        "hi": 6,
-        "l5_str": "5\u00b75\u00b72\u00b79\u00b72",
-        "season_rpg": 4.42,
-        "run_factor": 0.83
-      }
-    },
-    "team_hits": {
-      "away": {
-        "team": "Texas Rangers",
-        "opp": "Arizona Diamondbacks",
-        "lambda": 7.32,
-        "lo": 4,
-        "hi": 11,
-        "l5_str": "11\u00b77\u00b74\u00b75\u00b713",
-        "season_hpg": 8.07,
-        "hit_factor": 0.95
-      },
-      "home": {
-        "team": "Arizona Diamondbacks",
-        "opp": "Texas Rangers",
-        "lambda": 7.63,
-        "lo": 4,
-        "hi": 11,
-        "l5_str": "10\u00b79\u00b79\u00b711\u00b76",
-        "season_hpg": 8.11,
+        "l5_str": "5\u00b78\u00b713\u00b78\u00b74",
+        "season_hpg": 8.21,
         "hit_factor": 0.91
       }
     }
   },
   {
     "away": "San Diego Padres",
-    "home": "San Francisco Giants",
-    "time": "12:20 AM BST",
+    "home": "Colorado Rockies",
+    "time": "1:40 AM BST",
     "pitchers": [
       {
         "side": "away",
-        "name": "Nick Pivetta",
+        "name": "Casey Mize",
         "team": "San Diego Padres",
-        "opp": "San Francisco Giants",
-        "opp_kpct": 21.4,
-        "lambda": 4.54,
+        "opp": "Colorado Rockies",
+        "opp_kpct": 23.0,
+        "lambda": 4.11,
         "lo": 2,
         "hi": 7,
-        "proj_ip": 4.2,
-        "outs_lambda": 12.6,
-        "outs_lo": 8,
-        "outs_hi": 17,
-        "season_era": "3.43",
-        "season_k9": "11.14",
-        "season_hits9": "6.00",
-        "bb9": 2.57,
-        "whip": "0.95",
-        "l5_str": "4\u00b78\u00b78\u00b74\u00b72",
-        "l5_vs_season": -15.0
+        "proj_ip": 4.7,
+        "outs_lambda": 14.0,
+        "outs_lo": 9,
+        "outs_hi": 19,
+        "season_era": "3.70",
+        "season_k9": "8.07",
+        "season_hits9": "7.77",
+        "bb9": 2.19,
+        "whip": "1.11",
+        "l5_str": "3\u00b70\u00b71\u00b74\u00b77",
+        "l5_vs_season": -9.0
       },
       {
         "side": "home",
-        "name": "Logan Webb",
-        "team": "San Francisco Giants",
+        "name": "Tomoyuki Sugano",
+        "team": "Colorado Rockies",
         "opp": "San Diego Padres",
         "opp_kpct": 21.6,
-        "lambda": 4.43,
-        "lo": 2,
-        "hi": 7,
-        "proj_ip": 4.5,
-        "outs_lambda": 13.6,
-        "outs_lo": 9,
-        "outs_hi": 18,
-        "season_era": "4.10",
-        "season_k9": "7.34",
-        "season_hits9": "8.04",
-        "bb9": 2.31,
-        "whip": "1.15",
-        "l5_str": "7\u00b72\u00b76\u00b71\u00b78",
-        "l5_vs_season": 35.0
+        "lambda": 3.37,
+        "lo": 1,
+        "hi": 6,
+        "proj_ip": 4.8,
+        "outs_lambda": 14.4,
+        "outs_lo": 10,
+        "outs_hi": 19,
+        "season_era": "5.30",
+        "season_k9": "5.49",
+        "season_hits9": "9.94",
+        "bb9": 2.16,
+        "whip": "1.34",
+        "l5_str": "3\u00b72\u00b74\u00b74\u00b75",
+        "l5_vs_season": 27.0
       }
     ],
     "team_runs": {
       "away": {
         "team": "San Diego Padres",
-        "opp": "San Francisco Giants",
-        "lambda": 6.22,
-        "lo": 3,
-        "hi": 9,
-        "l5_str": "3\u00b75\u00b79\u00b77\u00b77",
-        "season_rpg": 4.28,
-        "run_factor": 1.06
+        "opp": "Colorado Rockies",
+        "lambda": 7.96,
+        "lo": 4,
+        "hi": 12,
+        "l5_str": "5\u00b79\u00b77\u00b77\u00b76",
+        "season_rpg": 4.29,
+        "run_factor": 1.36
       },
       "home": {
-        "team": "San Francisco Giants",
+        "team": "Colorado Rockies",
         "opp": "San Diego Padres",
-        "lambda": 4.55,
-        "lo": 2,
-        "hi": 7,
-        "l5_str": "5\u00b72\u00b77\u00b75\u00b76",
-        "season_rpg": 4.21,
-        "run_factor": 0.92
+        "lambda": 2.75,
+        "lo": 1,
+        "hi": 5,
+        "l5_str": "1\u00b73\u00b72\u00b77\u00b71",
+        "season_rpg": 4.67,
+        "run_factor": 0.95
       }
     },
     "team_hits": {
       "away": {
         "team": "San Diego Padres",
-        "opp": "San Francisco Giants",
-        "lambda": 10.27,
-        "lo": 6,
-        "hi": 14,
-        "l5_str": "9\u00b76\u00b716\u00b712\u00b713",
+        "opp": "Colorado Rockies",
+        "lambda": 11.92,
+        "lo": 8,
+        "hi": 16,
+        "l5_str": "6\u00b716\u00b712\u00b713\u00b79",
         "season_hpg": 7.89,
-        "hit_factor": 0.97
+        "hit_factor": 1.19
       },
       "home": {
-        "team": "San Francisco Giants",
+        "team": "Colorado Rockies",
         "opp": "San Diego Padres",
-        "lambda": 6.68,
+        "lambda": 7.66,
+        "lo": 4,
+        "hi": 11,
+        "l5_str": "5\u00b78\u00b710\u00b712\u00b75",
+        "season_hpg": 8.58,
+        "hit_factor": 0.93
+      }
+    }
+  },
+  {
+    "away": "Seattle Mariners",
+    "home": "Los Angeles Angels",
+    "time": "2:38 AM BST",
+    "pitchers": [
+      {
+        "side": "away",
+        "name": "Kade Anderson",
+        "team": "Seattle Mariners",
+        "opp": "Los Angeles Angels",
+        "opp_kpct": 25.4,
+        "lambda": 4.52,
+        "lo": 2,
+        "hi": 7,
+        "proj_ip": 5.2,
+        "outs_lambda": 15.55,
+        "outs_lo": 11,
+        "outs_hi": 21,
+        "season_era": "4.29",
+        "season_k9": "6.86",
+        "season_hits9": "9.00",
+        "bb9": 3.43,
+        "whip": "1.38",
+        "l5_str": "5\u00b73\u00b73\u00b75",
+        "l5_vs_season": -1.0
+      },
+      {
+        "side": "home",
+        "name": "Reid Detmers",
+        "team": "Los Angeles Angels",
+        "opp": "Seattle Mariners",
+        "opp_kpct": 23.1,
+        "lambda": 7.74,
+        "lo": 4,
+        "hi": 11,
+        "proj_ip": 6.6,
+        "outs_lambda": 19.8,
+        "outs_lo": 14,
+        "outs_hi": 26,
+        "season_era": "3.32",
+        "season_k9": "10.23",
+        "season_hits9": "6.91",
+        "bb9": 2.41,
+        "whip": "1.04",
+        "l5_str": "11\u00b75\u00b72\u00b78\u00b79",
+        "l5_vs_season": -2.0
+      }
+    ],
+    "team_runs": {
+      "away": {
+        "team": "Seattle Mariners",
+        "opp": "Los Angeles Angels",
+        "lambda": 4.75,
+        "lo": 2,
+        "hi": 8,
+        "l5_str": "3\u00b74\u00b75\u00b719\u00b77",
+        "season_rpg": 4.08,
+        "run_factor": 0.89
+      },
+      "home": {
+        "team": "Los Angeles Angels",
+        "opp": "Seattle Mariners",
+        "lambda": 4.88,
+        "lo": 2,
+        "hi": 8,
+        "l5_str": "6\u00b76\u00b73\u00b75\u00b75",
+        "season_rpg": 4.05,
+        "run_factor": 1.07
+      }
+    },
+    "team_hits": {
+      "away": {
+        "team": "Seattle Mariners",
+        "opp": "Los Angeles Angels",
+        "lambda": 8.24,
+        "lo": 5,
+        "hi": 12,
+        "l5_str": "6\u00b74\u00b710\u00b723\u00b712",
+        "season_hpg": 7.71,
+        "hit_factor": 0.85
+      },
+      "home": {
+        "team": "Los Angeles Angels",
+        "opp": "Seattle Mariners",
+        "lambda": 5.82,
         "lo": 3,
-        "hi": 10,
-        "l5_str": "10\u00b76\u00b710\u00b76\u00b78",
-        "season_hpg": 8.38,
-        "hit_factor": 0.84
+        "hi": 9,
+        "l5_str": "15\u00b712\u00b74\u00b74\u00b74",
+        "season_hpg": 7.79,
+        "hit_factor": 1.04
+      }
+    }
+  },
+  {
+    "away": "Miami Marlins",
+    "home": "Arizona Diamondbacks",
+    "time": "2:40 AM BST",
+    "pitchers": [
+      {
+        "side": "away",
+        "name": "Sandy Alcantara",
+        "team": "Miami Marlins",
+        "opp": "Arizona Diamondbacks",
+        "opp_kpct": 19.3,
+        "lambda": 2.64,
+        "lo": 1,
+        "hi": 5,
+        "proj_ip": 5.9,
+        "outs_lambda": 17.6,
+        "outs_lo": 12,
+        "outs_hi": 23,
+        "season_era": "3.78",
+        "season_k9": "6.44",
+        "season_hits9": "8.46",
+        "bb9": 2.48,
+        "whip": "1.22",
+        "l5_str": "1\u00b76\u00b73\u00b72\u00b71",
+        "l5_vs_season": -43.0
+      },
+      {
+        "side": "home",
+        "name": "Corbin Burnes",
+        "team": "Arizona Diamondbacks",
+        "opp": "Miami Marlins",
+        "opp_kpct": 21.8,
+        "lambda": 1.8,
+        "lo": 1,
+        "hi": 4,
+        "proj_ip": 2.7,
+        "outs_lambda": 8.19,
+        "outs_lo": 5,
+        "outs_hi": 12,
+        "season_era": "0.00",
+        "season_k9": "6.00",
+        "season_hits9": "6.00",
+        "bb9": 6.0,
+        "whip": "1.33",
+        "l5_str": "2",
+        "l5_vs_season": 0.0
+      }
+    ],
+    "team_runs": {
+      "away": {
+        "team": "Miami Marlins",
+        "opp": "Arizona Diamondbacks",
+        "lambda": 4.8,
+        "lo": 2,
+        "hi": 8,
+        "l5_str": "5\u00b714\u00b72\u00b74\u00b76",
+        "season_rpg": 4.44,
+        "run_factor": 1.02
+      },
+      "home": {
+        "team": "Arizona Diamondbacks",
+        "opp": "Miami Marlins",
+        "lambda": 4.46,
+        "lo": 2,
+        "hi": 7,
+        "l5_str": "5\u00b72\u00b79\u00b72\u00b76",
+        "season_rpg": 4.43,
+        "run_factor": 0.97
+      }
+    },
+    "team_hits": {
+      "away": {
+        "team": "Miami Marlins",
+        "opp": "Arizona Diamondbacks",
+        "lambda": 8.29,
+        "lo": 5,
+        "hi": 12,
+        "l5_str": "10\u00b720\u00b710\u00b77\u00b79",
+        "season_hpg": 8.3,
+        "hit_factor": 0.91
+      },
+      "home": {
+        "team": "Arizona Diamondbacks",
+        "opp": "Miami Marlins",
+        "lambda": 8.9,
+        "lo": 5,
+        "hi": 13,
+        "l5_str": "9\u00b79\u00b711\u00b76\u00b712",
+        "season_hpg": 8.14,
+        "hit_factor": 0.98
       }
     }
   }
