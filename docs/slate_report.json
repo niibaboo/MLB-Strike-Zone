@@ -192,24 +192,24 @@
     "pitchers": [
       {
         "side": "away",
-        "name": "Davis Martin",
+        "name": "Chris Murphy",
         "team": "Chicago White Sox",
         "opp": "Cleveland Guardians",
         "opp_kpct": 21.1,
-        "lambda": 2.11,
+        "lambda": 1.24,
         "lo": 1,
-        "hi": 4,
-        "proj_ip": 3.7,
-        "outs_lambda": 11.2,
-        "outs_lo": 7,
-        "outs_hi": 16,
-        "season_era": "4.05",
-        "season_k9": "7.63",
-        "season_hits9": "9.02",
-        "bb9": 2.79,
-        "whip": "1.31",
-        "l5_str": "1\u00b71\u00b73\u00b73\u00b71",
-        "l5_vs_season": -47.0
+        "hi": 3,
+        "proj_ip": 1.0,
+        "outs_lambda": 2.89,
+        "outs_lo": 1,
+        "outs_hi": 5,
+        "season_era": "3.94",
+        "season_k9": "9.56",
+        "season_hits9": "7.88",
+        "bb9": 4.22,
+        "whip": "1.34",
+        "l5_str": "2\u00b71",
+        "l5_vs_season": 41.0
       },
       {
         "side": "home",
@@ -247,7 +247,7 @@
       "home": {
         "team": "Cleveland Guardians",
         "opp": "Chicago White Sox",
-        "lambda": 4.49,
+        "lambda": 4.5,
         "lo": 2,
         "hi": 7,
         "l5_str": "5\u00b75\u00b73\u00b79\u00b73",
@@ -269,12 +269,12 @@
       "home": {
         "team": "Cleveland Guardians",
         "opp": "Chicago White Sox",
-        "lambda": 7.79,
+        "lambda": 7.45,
         "lo": 4,
         "hi": 11,
         "l5_str": "9\u00b77\u00b75\u00b714\u00b77",
         "season_hpg": 7.9,
-        "hit_factor": 1.0
+        "hit_factor": 0.96
       }
     }
   },
@@ -957,19 +957,36 @@
       },
       {
         "side": "home",
-        "name": null
+        "name": "Jacob deGrom",
+        "team": "Texas Rangers",
+        "opp": "Boston Red Sox",
+        "opp_kpct": 21.4,
+        "lambda": 7.69,
+        "lo": 4,
+        "hi": 11,
+        "proj_ip": 5.7,
+        "outs_lambda": 17.2,
+        "outs_lo": 12,
+        "outs_hi": 23,
+        "season_era": "3.80",
+        "season_k9": "11.21",
+        "season_hits9": "7.41",
+        "bb9": 2.29,
+        "whip": "1.08",
+        "l5_str": "10\u00b72\u00b78\u00b77\u00b712",
+        "l5_vs_season": 17.0
       }
     ],
     "team_runs": {
       "away": {
         "team": "Boston Red Sox",
         "opp": "Texas Rangers",
-        "lambda": 4.02,
+        "lambda": 3.89,
         "lo": 2,
-        "hi": 7,
+        "hi": 6,
         "l5_str": "1\u00b74\u00b72\u00b75\u00b74",
         "season_rpg": 4.42,
-        "run_factor": 1.03
+        "run_factor": 1.0
       },
       "home": {
         "team": "Texas Rangers",
@@ -986,12 +1003,12 @@
       "away": {
         "team": "Boston Red Sox",
         "opp": "Texas Rangers",
-        "lambda": 8.27,
-        "lo": 5,
-        "hi": 12,
+        "lambda": 7.6,
+        "lo": 4,
+        "hi": 11,
         "l5_str": "4\u00b78\u00b78\u00b710\u00b78",
         "season_hpg": 8.33,
-        "hit_factor": 1.01
+        "hit_factor": 0.93
       },
       "home": {
         "team": "Texas Rangers",
